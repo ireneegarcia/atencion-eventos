@@ -1,0 +1,6 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^api\.evataxi\.com\.ve$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.api\.evataxi\.com\.ve$
+RewriteRule ^/?$ "http\:\/\/api\.evataxi\.com\.ve\/public\/" [R=301,L]
+
