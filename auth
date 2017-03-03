@@ -1,0 +1,12 @@
+1	id	int(11)			No	Ninguna		 Cambiar Cambiar	 Eliminar Eliminar	 Navegar los valores distintivos Navegar los valores distintivos	Primaria Primaria	 Único Único	Mostrar más acciones Más
+	2	email	varchar(255)	utf8_general_ci		No	Ninguna		 Cambiar Cambiar	 Eliminar Eliminar	 Navegar los valores distintivos Navegar los valores distintivos	 Primaria Primaria	Único Único	Mostrar más acciones Más
+	3	ci	varchar(10)	utf8_general_ci		No	Ninguna		 Cambiar Cambiar	 Eliminar Eliminar	 Navegar los valores distintivos Navegar los valores distintivos	 Primaria Primaria	Único Único	Mostrar más acciones Más
+	4	password	char(128)	utf8_general_ci		No	Ninguna		 Cambiar Cambiar	 Eliminar Eliminar	 Navegar los valores distintivos Navegar los valores distintivos	 Primaria Primaria	 Único Único	Mostrar más acciones Más
+	5	phone	varchar(20)	utf8_general_ci		Sí	NULL		 Cambiar Cambiar	 Eliminar Eliminar	 Navegar los valores distintivos Navegar los valores distintivos	 Primaria Primaria	 Único Único	Mostrar más acciones Más
+	6	is_active	tinyint(1)			No	1		 Cambiar Cambiar	 Eliminar Eliminar	 Navegar los valores distintivos Navegar los valores distintivos	 Primaria Primaria	 Único Único	Mostrar más acciones Más
+	7	name	varchar(31)	utf8_general_ci		No	Ninguna		 Cambiar Cambiar	 Eliminar Eliminar	 Navegar los valores distintivos Navegar los valores distintivos	 Primaria Primaria	 Único Único	Mostrar más acciones Más
+	8	last_login	datetime			No	Ninguna		 Cambiar Cambiar	 Eliminar Eliminar	 Navegar los valores distintivos Navegar los valores distintivos	 Primaria Primaria	 Único Único	Mostrar más acciones Más
+	9	registration_date	datetime			No	Ninguna		 Cambiar Cambiar	 Eliminar Eliminar	 Navegar los valores distintivos Navegar los valores distintivos	 Primaria Primaria	 Único Único	Mostrar más acciones Más
+	10	photo	tinyint(1)			No	0		 Cambiar Cambiar	 Eliminar Eliminar	 Navegar los valores distintivos Navegar los valores distintivos	 Primaria Primaria	 Único Único	Mostrar más acciones Más
+	11	token	varchar(255)	utf8_general_ci		Sí	NULL		 Cambiar Cambiar	 Eliminar Eliminar	 Navegar los valores distintivos Navegar los valores distintivos	 Primaria Primaria	 Único Único	Mostrar más acciones Más
+	12	role

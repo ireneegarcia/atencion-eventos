@@ -1,0 +1,2 @@
+
+[] listarCercanosCoord($coord) Debe soportar la medicion de distancia real
