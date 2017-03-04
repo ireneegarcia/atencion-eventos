@@ -400,8 +400,8 @@
     $(document).ready(function() {
         app.timer();
         app.map();
-        app.weather();
-        app.morrisPie();
+       /* app.weather();
+        app.morrisPie();*/
     });
 </script>
 

@@ -81,13 +81,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 hidden">
-            <div class="panel panel-default" >
-                <div class="panel-body">
-                    <div id="donut-example"></div>
-                </div>
-            </div>
-        </div>
+
     </div>
     <!--ToDo end-->
 

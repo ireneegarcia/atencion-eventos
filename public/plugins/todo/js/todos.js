@@ -71,6 +71,7 @@ $(document).ready(function() {
         "</li>";
    	  
 	  $(this).val('');
+        $('#new-todo').val('');
 		$todoList.html(todos);
 		runBind();
 		$('#main').show();

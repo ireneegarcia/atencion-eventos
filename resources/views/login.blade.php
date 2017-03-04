@@ -38,8 +38,7 @@
                         <div class="form-group">
                             <div class="col-md-12">
                                 <a class="btn btn-primary btn-block">Sign in</a>
-                                <hr />
-                                <a href="{{ url('/signup') }}" class="btn btn-default btn-block">Not a member? Sign Up</a>
+
                             </div>
                         </div>
                     </form>
