@@ -56,7 +56,7 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">To do list</h3>
+                    <h3 class="panel-title">Lista de cosas por hacer</h3>
                     <div class="actions pull-right">
                         <i class="fa fa-chevron-down"></i>
                         <i class="fa fa-times"></i>
@@ -66,13 +66,13 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <input id="new-todo" type="text" class="form-control" placeholder="What needs to be done?">
+                                <input id="new-todo" type="text" class="form-control" placeholder="¿Qué se necesita hacer?">
                                 <section id='main'>
                                     <ul id='todo-list'></ul>
                                 </section>
                             </div>
                             <div class="form-group">
-                                <button id="todo-enter" class="btn btn-primary pull-right">Submit</button>
+                                <button id="todo-enter" class="btn btn-primary pull-right">Añadir</button>
                                 <div id='todo-count'></div>
                             </div>
                         </div>

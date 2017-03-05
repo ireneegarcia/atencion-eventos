@@ -31,6 +31,20 @@
     <script src="{{asset('/js/html5shiv.js')}}"></script>
     <script src="{{asset('/js/respond.min.js')}}"></script>
     <![endif]-->
+    <style>
+        html {
+            background: url({{asset('/img/fondo.jpg')}}) no-repeat top left fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            overflow-y:hidden;
+        }
+        #pre-load-web {width:100%;position:absolute;background:#92def8;left:0px;top:0px;z-index:100000}
+        /*aqui centramos la imagen si coloco margin left -30 es por que la imagen mide 60 */
+        #pre-load-web #imagen-load{left:50%;margin-left:-30px;position:absolute}
+        @media screen and (max-height:550px){html {overflow-y:visible;} .row{margin-right: -15px;}}
+    </style>
 </head>
 <body>
 @section('content')

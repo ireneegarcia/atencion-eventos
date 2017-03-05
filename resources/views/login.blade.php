@@ -15,11 +15,11 @@
                 <div class="panel panel-primary animated flipInY">
                     <div class="panel-heading">
                         <h3 class="panel-title">
-                            Sign In
+                            INICIAR SESIÓN
                         </h3>
                     </div>
                     <div class="panel-body">
-                        <p> Login to access your account.</p>
+                        <p> Ingresa los datos para acceder a tu cuenta</p>
                         <form class="form-horizontal" role="form" action="{{ url('/login') }}" method="post">
                             <input type="hidden" id="firebase_token" name="_token" value="jjjjjkk">
                             <div class="form-group">
@@ -32,12 +32,12 @@
                                 <div class="col-md-12">
                                     <input type="password" class="form-control" id="password" placeholder="Password" value="1234567">
                                     <i class="fa fa-lock"></i>
-                                    <a href="javascript:void(0)" class="help-block">Forgot Your Password?</a>
+                                    <a href="javascript:void(0)" class="help-block">¿Olvidó su clave?</a>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12">
-                                    <a id="btnSignIn" class="btn btn-primary btn-block">Sign in</a>
+                                    <a id="btnSignIn" class="btn btn-primary btn-block">Acceder</a>
                                 </div>
                             </div>
                         </form>
@@ -68,7 +68,7 @@
             $( "#btnSignIn" ).click(function() {
                 $.ajax({
                     type: "POST",
-                    url: "http://localhost/API/public/api/login",
+                    url: "http://localhost:4040/atencion-eventos/public/api/login",
                     data: {
                         email: "irenegarcia103@gmail.com",
                         password: "1234567",
@@ -79,7 +79,7 @@
                         document.cookie = "token=" + data.account.token;
                         delete data.account.token;
                         document.cookie = "user=" + data.account;
-                        window.location.href = "http://localhost/API/public/dashboard"
+                        window.location.href = "http://localhost:4040/atencion-eventos/public/dashboard"
                     }
                 });
             });

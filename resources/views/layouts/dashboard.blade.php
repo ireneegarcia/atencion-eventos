@@ -46,7 +46,7 @@
     <header id="header">
         <!--logo start-->
         <div class="brand">
-            <a href="index.html" class="logo"><span>Geo</span>Atención</a>
+
         </div>
         <!--logo end-->
         <div class="toggle-navigation toggle-left">
