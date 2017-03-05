@@ -9,7 +9,3 @@ function CookiesDelete(field) {
 function RedirecticnTo(url) {
     window.location.href = url;
 }
-
-function GetBaseURL() {
-    return "http://localhost/API/public";
-}

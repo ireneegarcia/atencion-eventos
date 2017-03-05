@@ -45,6 +45,13 @@
         #pre-load-web #imagen-load{left:50%;margin-left:-30px;position:absolute}
         @media screen and (max-height:550px){html {overflow-y:visible;} .row{margin-right: -15px;}}
     </style>
+
+    <script type="text/javascript">
+        function GetBaseURL() {
+            return "{{asset("")}}"
+        }
+    </script>
+    
 </head>
 <body>
 @section('content')

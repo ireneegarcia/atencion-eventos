@@ -69,7 +69,7 @@
             $( "#btnSignIn" ).click(function() {
                 $.ajax({
                     type: "POST",
-                    url: GetBaseURL()+"/api/login",
+                    url: GetBaseURL()+"api/login",
                     data: {
                         email: $("#email").val(),
                         password: $("#password").val(),
@@ -80,7 +80,7 @@
                         CookiesSave("token",  data.account.token);
                         delete data.account.token;
                         CookiesSave("user",  data.account);
-                        RedirecticnTo(GetBaseURL()+"/dashboard");
+                        RedirecticnTo(GetBaseURL()+"dashboard");
                     },
                     error: function (data) {
                         console.log(data);
