@@ -53,6 +53,7 @@
     <script src="{{asset('/plugins/waypoints/waypoints.min.js')}}"></script>
     <script src="{{asset('/plugins/nanoScroller/jquery.nanoscroller.min.js')}}"></script>
     <script src="{{asset('/js/application.js')}}"></script>
+    <script src="{{asset('/js/helper.js')}}"></script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -68,18 +69,21 @@
             $( "#btnSignIn" ).click(function() {
                 $.ajax({
                     type: "POST",
-                    url: "http://localhost:4040/atencion-eventos/public/api/login",
+                    url: GetBaseURL()+"/api/login",
                     data: {
-                        email: "irenegarcia103@gmail.com",
-                        password: "1234567",
-                        firebase_token: "1111"
+                        email: $("#email").val(),
+                        password: $("#password").val(),
+                        firebase_token: " "
                     },
                     dataType: "json",
                     success: function(data) {
-                        document.cookie = "token=" + data.account.token;
+                        CookiesSave("token",  data.account.token);
                         delete data.account.token;
-                        document.cookie = "user=" + data.account;
-                        window.location.href = "http://localhost:4040/atencion-eventos/public/dashboard"
+                        CookiesSave("user",  data.account);
+                        RedirecticnTo(GetBaseURL()+"/dashboard");
+                    },
+                    error: function (data) {
+                        console.log(data);
                     }
                 });
             });
