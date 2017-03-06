@@ -39,6 +39,7 @@
     <script src="{{asset('/js/html5shiv.js')}}"></script>
     <script src="{{asset('/js/respond.min.js')}}"></script>
     <![endif]-->
+    <script> function GetBaseURL() { return "{{asset("")}}" } </script>
 </head>
 <body>
 
@@ -368,14 +369,10 @@
 <!--Datatable-->
 <script src="{{asset('/plugins/dataTables/js/jquery.dataTables.js')}}"></script>
 <script src="{{asset('/plugins/dataTables/js/dataTables.bootstrap.js')}}"></script>
-<script>
-    $(document).ready(function() {
-        $('#example').dataTable();
-    });
-</script>
 
 <!--Modals-->
 <script src="{{asset('/js/application.js')}}"></script>
+<script src="{{asset('/js/helper.js')}}"></script>
 
 <script>
     $(document).ready(function() {
@@ -400,8 +397,8 @@
     $(document).ready(function() {
         app.timer();
         app.map();
-       /* app.weather();
-        app.morrisPie();*/
+        /* app.weather();
+         app.morrisPie();*/
     });
 </script>
 

@@ -46,11 +46,7 @@
         @media screen and (max-height:550px){html {overflow-y:visible;} .row{margin-right: -15px;}}
     </style>
 
-    <script type="text/javascript">
-        function GetBaseURL() {
-            return "{{asset("")}}"
-        }
-    </script>
+    <script> function GetBaseURL() { return "{{asset("")}}" } </script>
     
 </head>
 <body>

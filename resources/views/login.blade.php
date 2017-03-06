@@ -77,10 +77,10 @@
                     },
                     dataType: "json",
                     success: function(data) {
-                        CookiesSave("token",  data.account.token);
+                        SaveCookie("token",  data.account.token);
                         delete data.account.token;
-                        CookiesSave("user",  data.account);
-                        RedirecticnTo(GetBaseURL()+"dashboard");
+                        SaveCookie("user", JSON.stringify(data.account));
+                        RedirectionTo(GetBaseURL()+"dashboard");
                     },
                     error: function (data) {
                         console.log(data);
