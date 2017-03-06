@@ -32,6 +32,9 @@
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <!-- Sweet alert -->
+    <script src="{{ asset('/plugins/sweetalert/dist/sweetalert.min.js') }}" type="text/javascript"></script>
+    <link href="{{ asset('/plugins/sweetalert/dist/sweetalert.css') }}" rel="stylesheet" type="text/css"/>
     <!-- Feature detection -->
     <script src="{{asset('/js/modernizr-2.6.2.min.js')}}"></script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -422,7 +425,7 @@
 <script src="{{asset('/plugins/flot/js/jquery.flot.threshold.min.js')}}"></script>
 <script src="{{asset('/plugins/flot/js/jquery.colorhelpers.min.js')}}"></script>
 <script src="{{asset('/plugins/flot/js/jquery.flot.time.min.js')}}"></script>
-<script src="{{asset('/plugins/flot/js/jquery.flot.example.js')}}"></script>
+<!--<script src="{{asset('/plugins/flot/js/jquery.flot.example.js')}}"></script>-->
 <!-- Morris  -->
 <script src="{{asset('/plugins/morris/js/morris.min.js')}}"></script>
 <script src="{{asset('/plugins/morris/js/raphael.2.1.0.min.js')}}"></script>

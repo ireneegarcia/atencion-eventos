@@ -57,7 +57,7 @@ class ApiAuthController extends Controller
         try {
             $token = JWTAuth::attempt([$loginBy => $loginCred, 'password' => $request->password]);
             if (!$token) {
-                return response()->json(["success" => "False", "error" => "Clave incorrecta"], 401);
+                return response()->json(["success" => "False", "error" => "Clave incorrecta, por favor verifique sus datos"], 401);
             }
         } catch (JWTException $ex) {
             return response()->json(["success" => "False", "error" => "Error desconocido al loguearse"], 401);

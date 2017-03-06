@@ -80,10 +80,19 @@
                         SaveCookie("token",  data.account.token);
                         delete data.account.token;
                         SaveCookie("user", JSON.stringify(data.account));
-                        RedirectionTo(GetBaseURL()+"dashboard");
+                        RedirectionTo(GetBaseURL());
                     },
                     error: function (data) {
                         console.log(data);
+                        swal({
+                            title: "Algo salió mal",
+                            text: data.responseJSON.error,
+                            type: "error",
+                            showCancelButton: false,
+                            closeOnConfirm: true
+                        }, function(){
+                            location.reload();
+                        });
                     }
                 });
             });
