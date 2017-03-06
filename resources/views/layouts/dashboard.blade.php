@@ -43,6 +43,7 @@
     <script src="{{asset('/js/respond.min.js')}}"></script>
     <![endif]-->
     <script> function GetBaseURL() { return "{{asset("")}}" } </script>
+
 </head>
 <body>
 
@@ -142,7 +143,7 @@
                 </li>
                 <li class="dropdown settings">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        Mike Adams <i class="fa fa-angle-down"></i>
+                        Michael Adams <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu animated fadeInDown">
                         <li>
@@ -155,7 +156,7 @@
                             <a href="#"><i class="fa fa-envelope"></i> Inbox <span class="badge badge-danager" id="user-inbox">5</span></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-power-off"></i> Logout</a>
+                            <a href="#" id="logout" onclick="salir()"><i class="fa fa-power-off"></i> Logout</a>
                         </li>
                     </ul>
                 </li>
@@ -363,6 +364,9 @@
     <!--sidebar right end-->
 </section>
 
+
+
+
 <!--Global JS-->
 <script src="{{asset('/js/jquery-1.10.2.min.js')}}"></script>
 <script src="{{asset('/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
@@ -376,6 +380,17 @@
 <!--Modals-->
 <script src="{{asset('/js/application.js')}}"></script>
 <script src="{{asset('/js/helper.js')}}"></script>
+
+<!--Logout-->
+<script>
+
+    function salir() {
+        DeleteCookie("user");
+        DeleteCookie("token");
+        RedirectionTo(GetBaseURL());
+    }
+
+</script>
 
 <script>
     $(document).ready(function() {
