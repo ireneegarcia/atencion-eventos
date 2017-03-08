@@ -10,6 +10,13 @@ function DeleteCookie(field) {
     document.cookie = field+"=";
 }
 
+function GetBaseURL() {
+    var url = window.location.href.split("/public")[0];
+    if (!(url[url.length-1] == '/')) url += "/";
+    url += "public/";
+    return url;
+}
+
 /**
  * @return {string}
  * @return {string}

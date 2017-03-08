@@ -80,10 +80,9 @@
                         SaveCookie("token",  data.account.token);
                         delete data.account.token;
                         SaveCookie("user", JSON.stringify(data.account));
-                        RedirectionTo(GetBaseURL());
+                        RedirectionTo(GetBaseURL()+"");
                     },
                     error: function (data) {
-                        console.log(data);
                         swal({
                             title: "Algo salió mal",
                             text: data.responseJSON.error,

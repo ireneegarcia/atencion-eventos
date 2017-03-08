@@ -49,8 +49,6 @@
         @media screen and (max-height:550px){html {overflow-y:visible;} .row{margin-right: -15px;}}
     </style>
 
-    <script> function GetBaseURL() { return "{{asset("")}}" } </script>
-    
 </head>
 <body>
 @section('content')

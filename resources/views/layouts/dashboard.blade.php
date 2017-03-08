@@ -42,8 +42,6 @@
     <script src="{{asset('/js/html5shiv.js')}}"></script>
     <script src="{{asset('/js/respond.min.js')}}"></script>
     <![endif]-->
-    <script> function GetBaseURL() { return "{{asset("")}}" } </script>
-
 </head>
 <body>
 
@@ -156,7 +154,7 @@
                             <a href="#"><i class="fa fa-envelope"></i> Inbox <span class="badge badge-danager" id="user-inbox">5</span></a>
                         </li>
                         <li>
-                            <a href="#" id="logout" onclick="salir()"><i class="fa fa-power-off"></i> Logout</a>
+                            <a href="#" id="logout" onclick="Logout()"><i class="fa fa-power-off"></i> Logout</a>
                         </li>
                     </ul>
                 </li>
@@ -364,9 +362,6 @@
     <!--sidebar right end-->
 </section>
 
-
-
-
 <!--Global JS-->
 <script src="{{asset('/js/jquery-1.10.2.min.js')}}"></script>
 <script src="{{asset('/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
@@ -384,10 +379,10 @@
 <!--Logout-->
 <script>
 
-    function salir() {
+    function Logout() {
         DeleteCookie("user");
         DeleteCookie("token");
-        RedirectionTo(GetBaseURL());
+        RedirectionTo(GetBaseURL()+"login");
     }
 
 </script>
