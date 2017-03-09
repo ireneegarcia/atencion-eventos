@@ -73,8 +73,8 @@
                                             <li>
                                                 <div class="view">
                                                     <input class="toggle" type="checkbox">
-                                                    <label data="{{$todo->id}}">{{$todo->item}}</label>
-                                                    <a class="destroy" onclick="destroy_todo()"></a>
+                                                    <label  data="">{{$todo->item}}</label>
+                                                    <a  class="destroy" ></a>
                                                 </div>
                                             </li>
                                         @endforeach
@@ -83,7 +83,7 @@
 
                             </div>
                             <div class="form-group">
-                                <button id="todo-enter" class="btn btn-primary pull-right" >Añadir</button>
+                                <button id="todo-enter" class="btn btn-primary pull-right">Añadir</button>
                                 <div id='todo-count'></div>
                             </div>
                         </div>

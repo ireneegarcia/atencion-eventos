@@ -29,7 +29,7 @@ class OperatorController extends Controller
 
         $newTodo->item = $request['item'];
         $newTodo->status = 1;
-        $newTodo->account =1;
+        $newTodo->account = $request['account'];;
 
         if(!$newTodo->save())
         {

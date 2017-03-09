@@ -13,13 +13,18 @@ $.fn.isBound = function(type, fn) {
 $(document).ready(function() {
     function runBind() {
         $('.destroy').on('click', function(e) {
+
             $currentListItem = $(this).closest('li');
+
+            console.log($currentListItem);
+
 
             $currentListItem.remove();
         });
 
         $('.toggle').on('click', function(e) {
 
+            alert("j");
             var $currentListItemLabel = $(this).closest('li').find('label');
 			/*
 			 * Do this or add css and remove JS dynamic css.
@@ -86,12 +91,14 @@ $(document).ready(function() {
 
 function add_todo(){
 
+    var jsonObjeto =JSON.parse(GetCookie("user"));
+    //console.log(jsonObjeto.id);
     $.ajax({
         type: "POST",
         url: GetBaseURL()+"api/storeTodo",
         data: {
             item: $('#new-todo').val(),
-            //account: $("#password").val()
+            account: jsonObjeto.id
         },
         dataType: "json",
         error: function (data) {
@@ -108,3 +115,4 @@ function add_todo(){
         }
     });
 }
+
