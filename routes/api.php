@@ -34,6 +34,13 @@ Route::group(['middleware' => 'cors'], function () {
     Route::get('/accounts/byEmail/{email}', 'AccountController@byEmail');
     Route::get('/version', 'HomeController@getVersion');
 
+    //OperatorController
+    Route::post('/storeTodo', 'OperatorController@storeTodo');
+    Route::post('/doneTodo', 'OperatorController@doneTodo');
+   // Route::get('/todoList', 'OperatorController@todoList');
+
+
+
 });
 
 //Route::get('/drivers', 'DriversController@getAllDrivers')->middleware('jwt.auth');

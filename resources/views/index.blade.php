@@ -65,19 +65,32 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <input id="new-todo" type="text" class="form-control" placeholder="¿Qué se necesita hacer?">
+                                <input id="new-todo" type="text" class="form-control"  placeholder="¿Qué se necesita hacer?">
                                 <section id='main'>
-                                    <ul id='todo-list'></ul>
+                                    <ul id='todo-list'>
+                                        <!-- Antigüa lista de to do por usuario-->
+                                        @foreach ($todos as $todo)
+                                            <li>
+                                                <div class="view">
+                                                    <input class="toggle" type="checkbox">
+                                                    <label data="{{$todo->id}}">{{$todo->item}}</label>
+                                                    <a class="destroy" onclick="destroy_todo()"></a>
+                                                </div>
+                                            </li>
+                                        @endforeach
+                                    </ul>
                                 </section>
+
                             </div>
                             <div class="form-group">
-                                <button id="todo-enter" class="btn btn-primary pull-right">Añadir</button>
+                                <button id="todo-enter" class="btn btn-primary pull-right" >Añadir</button>
                                 <div id='todo-count'></div>
                             </div>
                         </div>
                     </div>
 
                 </div>
+
             </div>
         </div>
 

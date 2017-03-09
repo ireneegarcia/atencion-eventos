@@ -19,6 +19,8 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/', 'OperatorController@todoList');
+
 Route::get('/uploadfile', 'ApiAuthController@uploadPhoto');
 
 Route::group(['middleware' =>'cors'], function () {
