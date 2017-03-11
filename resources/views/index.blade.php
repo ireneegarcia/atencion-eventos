@@ -6,7 +6,6 @@
 
 @section('content')
     <body>
-
     <div class="row">
         <div class="col-md-3 col-sm-6">
             <div class="dashboard-tile detail tile-red">

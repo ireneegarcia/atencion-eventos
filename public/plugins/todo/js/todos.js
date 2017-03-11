@@ -11,6 +11,7 @@ $.fn.isBound = function(type, fn) {
 };
 
 $(document).ready(function() {
+    runBind();
     function runBind() {
         $('.destroy').on('click', function(e) {
 
@@ -24,7 +25,6 @@ $(document).ready(function() {
 
         $('.toggle').on('click', function(e) {
 
-            alert("j");
             var $currentListItemLabel = $(this).closest('li').find('label');
 			/*
 			 * Do this or add css and remove JS dynamic css.

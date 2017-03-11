@@ -169,114 +169,115 @@
             </ul>
         </div>
     </header>
-    <!--sidebar left start-->
-    <aside class="sidebar">
-        <div id="leftside-navigation" class="nano">
-            <ul class="nano-content">
-                <li >
-                    <a href="index.html"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
-                </li>
-                <li class="sub-menu">
-                    <a href="javascript:void(0);"><i class="fa fa-map-marker"></i><span>Mapas</span><i class="arrow fa fa-angle-right pull-right"></i></a>
-                    <ul>
+    <div class="content" style="padding-top: 80px;">
+        <!--sidebar left start-->
+        <aside class="sidebar">
+            <div id="leftside-navigation" class="nano">
+                <ul class="nano-content">
+                    <li >
+                        <a href="index.html"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:void(0);"><i class="fa fa-map-marker"></i><span>Mapas</span><i class="arrow fa fa-angle-right pull-right"></i></a>
+                        <ul>
 
-                        <li><a href="ui-alerts-notifications.html">Google Map</a>
-                        </li>
-                        <li><a href="ui-panels.html">Vector Map</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href="javascript:void(0);"><i class="fa fa-bar-chart-o"></i><span>Estadisticas</span><i class="arrow fa fa-angle-right pull-right"></i></a>
-                    <ul>
-                        <li><a href="tables-basic.html">Basic Tables</a>
-                        </li>
-                        <li><a href="tables-data.html">Data Tables</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href="javascript:void(0);"><i class="fa fa-table"></i><span>Usuarios</span><i class="arrow fa fa-angle-right pull-right"></i></a>
-                    <ul>
-                        <li><a href="{{ url('/clients') }}">Clientes</a>
-                        </li>
-                        <li><a href="{{ url('/services') }}">Servicios</a>
-                        </li>
-                        <li><a href="{{ url('/operators') }}">Operadores</a>
-                        </li>
-                        <li><a href="{{ url('/admin') }}">Administradores</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href="javascript:void(0);"><i class="fa fa-envelope"></i><span>Mail</span><i class="arrow fa fa-angle-right pull-right"></i></a>
-                    <ul>
-                        <li><a href="mail-inbox.html">Inbox</a>
-                        </li>
-                        <li><a href="mail-compose.html">Compose Mail</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href="javascript:void(0);"><i class="fa fa-bar-chart-o"></i><span>Charts</span><i class="arrow fa fa-angle-right pull-right"></i></a>
-                    <ul>
-                        <li><a href="charts-chartjs.html">Chartjs</a>
-                        </li>
-                        <li><a href="charts-morris.html">Morris</a>
-                        </li>
-                        <li><a href="charts-c3.html">C3 Charts</a></li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href="javascript:void(0);"><i class="fa fa-map-marker"></i><span>Maps</span><i class="arrow fa fa-angle-right pull-right"></i></a>
-                    <ul>
-                        <li><a href="map-google.html">Google Map</a>
-                        </li>
-                        <li><a href="map-vector.html">Vector Map</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href="typography.html"><i class="fa fa-text-height"></i><span>Typography</span></a>
-                </li>
-                <li class="sub-menu">
-                    <a href="javascript:void(0);"><i class="fa fa-file"></i><span>Pages</span><i class="arrow fa fa-angle-right pull-right"></i></a>
-                    <ul>
-                        <li><a href="pages-blank.html">Blank Page</a>
-                        </li>
-                        <li><a href="pages-login.html">Login</a>
-                        </li>
-                        <li><a href="pages-sign-up.html">Sign Up</a>
-                        </li>
-                        <li><a href="pages-calendar.html">Calendar</a>
-                        </li>
-                        <li><a href="pages-timeline.html">Timeline</a>
-                        </li>
-                        <li><a href="pages-404.html">404</a>
-                        </li>
-                        <li><a href="pages-500.html">500</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-
-    </aside>
-    <!--sidebar left end-->
-    <!--main content start-->
-    <section class="main-content-wrapper">
-        <section id="main-content">
-            <!--tiles start-->
-            <div class="row">
-                <div class="col-md-12">
-                    @section('content')
-                    @show
-                </div>
+                            <li><a href="ui-alerts-notifications.html">Google Map</a>
+                            </li>
+                            <li><a href="ui-panels.html">Vector Map</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:void(0);"><i class="fa fa-bar-chart-o"></i><span>Estadisticas</span><i class="arrow fa fa-angle-right pull-right"></i></a>
+                        <ul>
+                            <li><a href="tables-basic.html">Basic Tables</a>
+                            </li>
+                            <li><a href="tables-data.html">Data Tables</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:void(0);"><i class="fa fa-table"></i><span>Usuarios</span><i class="arrow fa fa-angle-right pull-right"></i></a>
+                        <ul>
+                            <li><a href="{{ url('/clients') }}">Clientes</a>
+                            </li>
+                            <li><a href="{{ url('/services') }}">Servicios</a>
+                            </li>
+                            <li><a href="{{ url('/operators') }}">Operadores</a>
+                            </li>
+                            <li><a href="{{ url('/admin') }}">Administradores</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:void(0);"><i class="fa fa-envelope"></i><span>Mail</span><i class="arrow fa fa-angle-right pull-right"></i></a>
+                        <ul>
+                            <li><a href="mail-inbox.html">Inbox</a>
+                            </li>
+                            <li><a href="mail-compose.html">Compose Mail</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:void(0);"><i class="fa fa-bar-chart-o"></i><span>Charts</span><i class="arrow fa fa-angle-right pull-right"></i></a>
+                        <ul>
+                            <li><a href="charts-chartjs.html">Chartjs</a>
+                            </li>
+                            <li><a href="charts-morris.html">Morris</a>
+                            </li>
+                            <li><a href="charts-c3.html">C3 Charts</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:void(0);"><i class="fa fa-map-marker"></i><span>Maps</span><i class="arrow fa fa-angle-right pull-right"></i></a>
+                        <ul>
+                            <li><a href="map-google.html">Google Map</a>
+                            </li>
+                            <li><a href="map-vector.html">Vector Map</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="typography.html"><i class="fa fa-text-height"></i><span>Typography</span></a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:void(0);"><i class="fa fa-file"></i><span>Pages</span><i class="arrow fa fa-angle-right pull-right"></i></a>
+                        <ul>
+                            <li><a href="pages-blank.html">Blank Page</a>
+                            </li>
+                            <li><a href="pages-login.html">Login</a>
+                            </li>
+                            <li><a href="pages-sign-up.html">Sign Up</a>
+                            </li>
+                            <li><a href="pages-calendar.html">Calendar</a>
+                            </li>
+                            <li><a href="pages-timeline.html">Timeline</a>
+                            </li>
+                            <li><a href="pages-404.html">404</a>
+                            </li>
+                            <li><a href="pages-500.html">500</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
+
+        </aside>
+        <!--sidebar left end-->
+        <!--main content start-->
+        <section class="main-content-wrapper">
+            <section id="main-content">
+                <!--tiles start-->
+                <div class="row">
+                    <div class="col-md-12">
+                        @section('content')
+                        @show
+                    </div>
+                </div>
+            </section>
         </section>
-    </section>
-    <!--main content end-->
-    <!--sidebar right start-->
+        <!--main content end-->
+        <!--sidebar right start-->
     <aside class="sidebarRight">
         <div id="rightside-navigation ">
             <div class="sidebar-heading"><i class="fa fa-user"></i> Contacts</div>
@@ -360,6 +361,7 @@
         </div>
     </aside>
     <!--sidebar right end-->
+    </div>
 </section>
 
 <!--Global JS-->
