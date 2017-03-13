@@ -39,6 +39,8 @@ Route::group(['middleware' => 'cors'], function () {
     Route::post('/doneTodo', 'OperatorController@doneTodo');
    // Route::get('/todoList', 'OperatorController@todoList');
 
+    //profile
+    Route::get('/profile', 'ApiAuthController@getProfile');
 
 
 });

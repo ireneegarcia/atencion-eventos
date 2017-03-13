@@ -1,5 +1,7 @@
 var EnterKey = 13;
 
+
+
 $.fn.isBound = function(type, fn) {
     var data = this.data('events')[type];
 
@@ -11,16 +13,15 @@ $.fn.isBound = function(type, fn) {
 };
 
 $(document).ready(function() {
+    var id_todo = null;
     runBind();
     function runBind() {
         $('.destroy').on('click', function(e) {
 
             $currentListItem = $(this).closest('li');
 
-            console.log($currentListItem);
+           $currentListItem.remove();
 
-
-            $currentListItem.remove();
         });
 
         $('.toggle').on('click', function(e) {
@@ -44,6 +45,7 @@ $(document).ready(function() {
     $todoList = $('#todo-list');
     $('#new-todo').keypress(function(e) {
         if (e.which === EnterKey) {
+            add_todo();
             $('.destroy').off('click');
             $('.toggle').off('click');
             var todos = $todoList.html();
@@ -51,11 +53,11 @@ $(document).ready(function() {
                 "<li>" +
                 "<div class='view'>" +
                 "<input class='toggle' type='checkbox'>" +
-                "<label data=''>" + " " + $('#new-todo').val() + "</label>" +
+                "<label id="+id_todo+" data=''>" + " " + $('#new-todo').val() + "</label>" +
                 "<a class='destroy'></a>" +
                 "</div>" +
                 "</li>";
-            add_todo();
+
             $(this).val('');
             $todoList.html(todos);
             runBind();
@@ -64,6 +66,7 @@ $(document).ready(function() {
         }}); // end if
 
     $('#todo-enter').click(function(e) {
+        add_todo();
         $('.destroy').off('click');
         $('.toggle').off('click');
         var todos = $todoList.html();
@@ -71,12 +74,10 @@ $(document).ready(function() {
             "<li>" +
             "<div class='view'>" +
             "<input class='toggle' type='checkbox'>" +
-            "<label data=''>" + " " + $('#new-todo').val() + "</label>" +
+            "<label id="+id_todo+" data=''>" + " " + $('#new-todo').val() + "</label>" +
             "<a class='destroy'></a>" +
             "</div>" +
             "</li>";
-
-        add_todo();
 
         $(this).val('');
         $('#new-todo').val('');
@@ -86,33 +87,38 @@ $(document).ready(function() {
 
     });
 
+    function add_todo(){
+
+        var jsonObjeto =JSON.parse(GetCookie("user"));
+        //console.log(jsonObjeto.id);
+        $.ajax({
+            type: "POST",
+            url: GetBaseURL()+"api/storeTodo",
+            data: {
+                item: $('#new-todo').val(),
+                account: jsonObjeto.id
+            },
+            dataType: "json",
+            success: function(data) {
+                id_todo = data;
+                console.log(id_todo);
+            },
+            error: function (data) {
+                // console.log(data);
+                swal({
+                    title: "Algo salió mal",
+                    text: "Por favor, intente de nuevo añadir su item",
+                    type: "error",
+                    showCancelButton: false,
+                    closeOnConfirm: true
+                }, function(){
+                    location.reload();
+                });
+            }
+        });
+
+    }
+
 });
 
-
-function add_todo(){
-
-    var jsonObjeto =JSON.parse(GetCookie("user"));
-    //console.log(jsonObjeto.id);
-    $.ajax({
-        type: "POST",
-        url: GetBaseURL()+"api/storeTodo",
-        data: {
-            item: $('#new-todo').val(),
-            account: jsonObjeto.id
-        },
-        dataType: "json",
-        error: function (data) {
-            console.log(data);
-            swal({
-                title: "Algo salió mal",
-                text: "Por favor, intente de nuevo añadir su item",
-                type: "error",
-                showCancelButton: false,
-                closeOnConfirm: true
-            }, function(){
-                location.reload();
-            });
-        }
-    });
-}
 

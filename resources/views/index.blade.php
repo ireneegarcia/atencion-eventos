@@ -72,7 +72,7 @@
                                             <li>
                                                 <div class="view">
                                                     <input class="toggle" type="checkbox">
-                                                    <label  data="">{{$todo->item}}</label>
+                                                    <label id="{{$todo->id}}" data="">{{$todo->item}}</label>
                                                     <a  class="destroy" ></a>
                                                 </div>
                                             </li>

@@ -141,11 +141,11 @@
                 </li>
                 <li class="dropdown settings">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        Michael Adams <i class="fa fa-angle-down"></i>
+                         Michael Adams <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu animated fadeInDown">
                         <li>
-                            <a href="#"><i class="fa fa-user"></i> Profile</a>
+                            <a  href="{{ url('/profile') }}"><i class="fa fa-user"></i> Profile</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-calendar"></i> Calendar</a>

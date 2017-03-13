@@ -83,6 +83,7 @@ class ApiAuthController extends Controller
 
         );
         return response()->json($resp, 200);
+
     }
 
 
@@ -341,6 +342,15 @@ class ApiAuthController extends Controller
         }
         curl_close($ch);
         return $result;
+    }
+
+    function getProfile()
+    {
+        $profile = Account::where('id', 1)->first();
+
+        return view('profile', [
+            'profile' => $profile
+        ]);
     }
 
 }

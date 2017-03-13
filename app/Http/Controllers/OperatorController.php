@@ -36,7 +36,8 @@ class OperatorController extends Controller
             return response()->json(500);
         }
 
-        return response()->json(200);
+        $newTodo->id;
+        return response()->json($newTodo->id,200);
     }
 
     public function doneTodo(Request $request)
