@@ -15,6 +15,7 @@ class OperatorController extends Controller
     {
 
         $todos = Todo::where('account',  1)
+            ->where('status', 1)
             ->orderBy('id', 'asc')
             ->get();
 
@@ -44,8 +45,8 @@ class OperatorController extends Controller
     {
         $statusTodo = Todo::byId($request->id);
 
-        $statusTodo->status = $request['status'];
-        $statusTodo->account =1;
+        $statusTodo->status = 2;
+        //$statusTodo->account =1;
 
         if(!$statusTodo->save())
         {

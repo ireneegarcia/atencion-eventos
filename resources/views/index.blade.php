@@ -71,8 +71,8 @@
                                         @foreach ($todos as $todo)
                                             <li>
                                                 <div class="view">
-                                                    <input class="toggle" type="checkbox">
-                                                    <label id="{{$todo->id}}" data="">{{$todo->item}}</label>
+                                                    <input id="item_todo" value="{{$todo->id}}" class="toggle" type="checkbox">
+                                                    <label   data="">{{$todo->item}}</label>
                                                     <a  class="destroy" ></a>
                                                 </div>
                                             </li>
@@ -95,7 +95,9 @@
 
     </div>
     <!--ToDo end-->
+    <script>
 
+    </script>
     </body>
 
 @endsection

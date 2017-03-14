@@ -19,6 +19,7 @@ $(document).ready(function() {
     function runBind() {
         $('.destroy').on('click', function(e) {
 
+            done_todo();
             $currentListItem = $(this).closest('li');
 
             $currentListItem.remove();
@@ -101,15 +102,15 @@ $(document).ready(function() {
             },
             dataType: "json",
             success: function(data) {
-                console.log(data);
+                //console.log(data);
                 $('.destroy').off('click');
                 $('.toggle').off('click');
                 var todos = $todoList.html();
                 todos += ""+
                     "<li>" +
                     "<div class='view'>" +
-                    "<input class='toggle' type='checkbox'>" +
-                    "<label id="+data+" data=''>" + " " + $('#new-todo').val() + "</label>" +
+                    "<input id='item_todo'  value="+data+" class='toggle' type='checkbox'>" +
+                    "<label data=''>" + " " + $('#new-todo').val() + "</label>" +
                     "<a class='destroy'></a>" +
                     "</div>" +
                     "</li>";
@@ -135,6 +136,35 @@ $(document).ready(function() {
 
     }
 
+
+
 });
 
 
+function done_todo(){
+    console.log( $('#item_todo').val());
+    $.ajax({
+        type: "POST",
+        url: GetBaseURL()+"api/doneTodo",
+        data: {
+            id: $('#item_todo').val(),
+            //account: jsonObjeto.id
+        },
+        dataType: "json",
+        success: function(data) {
+            console.log("todo bien");
+        },
+        error: function (data) {
+            // console.log(data);
+            swal({
+                title: "Algo salió mal",
+                text: "Por favor, intente de nuevo eliminar su item",
+                type: "error",
+                showCancelButton: false,
+                closeOnConfirm: true
+            }, function(){
+                location.reload();
+            });
+        }
+    });
+}
