@@ -21,6 +21,9 @@ Route::get('/', function () {
 
 Route::get('/', 'OperatorController@todoList');
 
+//profile
+Route::get('/profile', 'ApiAuthController@getProfile');
+
 Route::get('/uploadfile', 'ApiAuthController@uploadPhoto');
 
 Route::group(['middleware' =>'cors'], function () {

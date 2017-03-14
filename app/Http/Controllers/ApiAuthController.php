@@ -344,7 +344,7 @@ class ApiAuthController extends Controller
         return $result;
     }
 
-    function getProfile()
+    function getProfile(Request $request)
     {
         $profile = Account::where('id', 1)->first();
 

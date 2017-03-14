@@ -13,23 +13,24 @@ $.fn.isBound = function(type, fn) {
 };
 
 $(document).ready(function() {
-    var id_todo = null;
+
+
     runBind();
     function runBind() {
         $('.destroy').on('click', function(e) {
 
             $currentListItem = $(this).closest('li');
 
-           $currentListItem.remove();
+            $currentListItem.remove();
 
         });
 
         $('.toggle').on('click', function(e) {
 
             var $currentListItemLabel = $(this).closest('li').find('label');
-			/*
-			 * Do this or add css and remove JS dynamic css.
-			 */
+            /*
+             * Do this or add css and remove JS dynamic css.
+             */
             if ( $currentListItemLabel.attr('data') == 'done' ) {
                 $currentListItemLabel.attr('data', '');
                 $currentListItemLabel.css('text-decoration', 'none');
@@ -41,54 +42,54 @@ $(document).ready(function() {
         });
     }
 
-
     $todoList = $('#todo-list');
     $('#new-todo').keypress(function(e) {
         if (e.which === EnterKey) {
             add_todo();
-            $('.destroy').off('click');
-            $('.toggle').off('click');
-            var todos = $todoList.html();
-            todos += ""+
-                "<li>" +
-                "<div class='view'>" +
-                "<input class='toggle' type='checkbox'>" +
-                "<label id="+id_todo+" data=''>" + " " + $('#new-todo').val() + "</label>" +
-                "<a class='destroy'></a>" +
-                "</div>" +
-                "</li>";
+            /* console.log(id_todo);
+             $('.destroy').off('click');
+             $('.toggle').off('click');
+             var todos = $todoList.html();
+             todos += ""+
+             "<li>" +
+             "<div class='view'>" +
+             "<input class='toggle' type='checkbox'>" +
+             "<label id="+id_todo+" data=''>" + " " + $('#new-todo').val() + "</label>" +
+             "<a class='destroy'></a>" +
+             "</div>" +
+             "</li>";
 
-            $(this).val('');
-            $todoList.html(todos);
-            runBind();
-            $('#main').show();
+             $(this).val('');
+             $todoList.html(todos);
+             runBind();
+             $('#main').show();*/
 
         }}); // end if
 
     $('#todo-enter').click(function(e) {
         add_todo();
-        $('.destroy').off('click');
+        /*$('.destroy').off('click');
         $('.toggle').off('click');
         var todos = $todoList.html();
         todos += ""+
             "<li>" +
             "<div class='view'>" +
             "<input class='toggle' type='checkbox'>" +
-            "<label id="+id_todo+" data=''>" + " " + $('#new-todo').val() + "</label>" +
+            "<label id="+id_todo()+" data=''>" + " " + $('#new-todo').val() + "</label>" +
             "<a class='destroy'></a>" +
             "</div>" +
             "</li>";
-
         $(this).val('');
         $('#new-todo').val('');
         $todoList.html(todos);
         runBind();
-        $('#main').show();
+        $('#main').show();*/
 
     });
 
     function add_todo(){
 
+        //var id_todo = null;
         var jsonObjeto =JSON.parse(GetCookie("user"));
         //console.log(jsonObjeto.id);
         $.ajax({
@@ -100,8 +101,23 @@ $(document).ready(function() {
             },
             dataType: "json",
             success: function(data) {
-                id_todo = data;
-                console.log(id_todo);
+                console.log(data);
+                $('.destroy').off('click');
+                $('.toggle').off('click');
+                var todos = $todoList.html();
+                todos += ""+
+                    "<li>" +
+                    "<div class='view'>" +
+                    "<input class='toggle' type='checkbox'>" +
+                    "<label id="+data+" data=''>" + " " + $('#new-todo').val() + "</label>" +
+                    "<a class='destroy'></a>" +
+                    "</div>" +
+                    "</li>";
+
+                $('#new-todo').val('');
+                $todoList.html(todos);
+                runBind();
+                $('#main').show();
             },
             error: function (data) {
                 // console.log(data);
