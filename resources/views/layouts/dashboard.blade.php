@@ -140,8 +140,8 @@
                     <img src="{{asset('/img/avatar.png')}}" alt="" class="img-circle">
                 </li>
                 <li class="dropdown settings">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                         Michael Adams <i class="fa fa-angle-down"></i>
+                    <a id="userInfo" class="dropdown-toggle" data-toggle="dropdown" href="#">
+                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu animated fadeInDown">
                         <li>
@@ -391,8 +391,10 @@
 
 <script>
     $(document).ready(function() {
-        $('#popover-left,#popover-top,#popover-bottom,#popover-right').popover()
-        $('#tooltip-left,#tooltip-top,#tooltip-bottom,#tooltip-right').tooltip()
+        $('#popover-left,#popover-top,#popover-bottom,#popover-right').popover();
+        $('#tooltip-left,#tooltip-top,#tooltip-bottom,#tooltip-right').tooltip();
+
+        $('#userInfo').html(GetUser() ? GetUser().name : "" + ' <i class="fa fa-angle-down"></i>');
     });
 </script>
 

@@ -38,6 +38,16 @@ function GetCookie(field) {
 }
 
 /**
+ * @return {null}
+ */
+function GetUser() {
+    if (IsLogged()) {
+        return JSON.parse(GetCookie("user"));
+    }
+    return null;
+}
+
+/**
  * @return {boolean}
  * @return {boolean}
  */
