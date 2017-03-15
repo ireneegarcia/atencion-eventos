@@ -70,21 +70,21 @@ $(document).ready(function() {
     $('#todo-enter').click(function(e) {
         add_todo();
         /*$('.destroy').off('click');
-        $('.toggle').off('click');
-        var todos = $todoList.html();
-        todos += ""+
-            "<li>" +
-            "<div class='view'>" +
-            "<input class='toggle' type='checkbox'>" +
-            "<label id="+id_todo()+" data=''>" + " " + $('#new-todo').val() + "</label>" +
-            "<a class='destroy'></a>" +
-            "</div>" +
-            "</li>";
-        $(this).val('');
-        $('#new-todo').val('');
-        $todoList.html(todos);
-        runBind();
-        $('#main').show();*/
+         $('.toggle').off('click');
+         var todos = $todoList.html();
+         todos += ""+
+         "<li>" +
+         "<div class='view'>" +
+         "<input class='toggle' type='checkbox'>" +
+         "<label id="+id_todo()+" data=''>" + " " + $('#new-todo').val() + "</label>" +
+         "<a class='destroy'></a>" +
+         "</div>" +
+         "</li>";
+         $(this).val('');
+         $('#new-todo').val('');
+         $todoList.html(todos);
+         runBind();
+         $('#main').show();*/
 
     });
 
@@ -136,13 +136,11 @@ $(document).ready(function() {
 
     }
 
-
-
 });
 
 
 function done_todo(){
-    console.log( $('#item_todo').val());
+    //console.log( $('#item_todo').val());
     $.ajax({
         type: "POST",
         url: GetBaseURL()+"api/doneTodo",
@@ -152,7 +150,7 @@ function done_todo(){
         },
         dataType: "json",
         success: function(data) {
-            console.log("todo bien");
+            //console.log("ok");
         },
         error: function (data) {
             // console.log(data);

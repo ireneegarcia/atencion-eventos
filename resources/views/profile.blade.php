@@ -21,7 +21,7 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Información del usuario</h3>
+                    <h3 id="userInfo" class="panel-title">Información del usuario</h3>
                     <div class="actions pull-right">
                         <i class="fa fa-chevron-down"></i>
                         <i class="fa fa-times"></i>
@@ -31,11 +31,12 @@
                     <form class="form-horizontal form-border">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nombre completo</label>
-                            <input type="email" disabled="disabled" class="form-control" id="exampleInputEmail1" placeholder="Nombre completo">
+
+                            <input type="text" disabled="disabled" class="form-control username" placeholder="Nombre completo">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email</label>
-                            <input type="email" disabled="disabled" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                            <input type="email" disabled="disabled" class="form-control useremail" id="exampleInputEmail1" placeholder="Email">
                         </div>
                     </form>
                 </div>
@@ -56,23 +57,31 @@
                     <form class="form-horizontal form-border">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Listado de condiciones</label>
-                            <select class="form-control input-lg">
-                                <option value="">Seleccione las condiciones que posee</option>
+                            <select id="condition_types" class="form-control input-lg">
+                                @foreach ( $conditions as $condition )
+
+                                    <option value="{{$condition->id}}">
+
+                                        {{$condition->name}}
+
+                                    </option>
+
+                                @endforeach
+
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Otra condición</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Introduzca la condición">
-                        </div>
+
                     </form>
                     <div class="row">
+
                         <!-- Button trigger modal -->
-                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#scrollingModal">
+                        <button class="btn btn-primary " data-toggle="modal" onclick="add_condition()">
                             Incluir condición
                         </button>
+
                         <!-- Button trigger modal -->
-                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#formModal">
-                            Remover condición
+                        <button class="btn btn-primary " data-toggle="modal" data-target="#formModal" onclick="my_condition()">
+                            Mis condiciones
                         </button>
                     </div>
                 </div>
@@ -117,11 +126,12 @@
                     </form>
                     <div class="row">
                         <!-- Button trigger modal -->
-                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#scrollingModal">
+                        <button class="btn btn-primary " data-toggle="modal" data-target="#scrollingModal">
                             Incluir contacto
                         </button>
+
                         <!-- Button trigger modal -->
-                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#formModal">
+                        <button class="btn btn-primary " data-toggle="modal" data-target="#formModal">
                             Remover contacto
                         </button>
                     </div>
@@ -137,15 +147,14 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel"> Esta opción no se podrá deshacer posteriormente...</h4>
+                    <h4 class="modal-title" id="myModalLabel"> Usted ha incluido previamente las siguientes condiciones...</h4>
                 </div>
                 <div class="modal-body">
                     <form class="form-horizontal" role="form">
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">Listado</label>
+                            <label for="inputEmail3" class="col-sm-2 control-label">Condiciones</label>
                             <div class="col-sm-10">
-                                <select class="form-control input-lg">
-                                    <option value="">Seleccione el item a remover</option>
+                                <select id="my_condition" class="form-control input-lg">
                                 </select>
                             </div>
                         </div>
@@ -167,35 +176,122 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">Usted tiene incluido...</h4>
+                    <h4 class="modal-title" id="myModalLabel">Usted ha incluido previamente las siguientes condiciones...</h4>
                 </div>
                 <div class="modal-body modal-scroll">
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui
-                        officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat
-                        facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque
-                        earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-                        voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-                        sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
-                        Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui
-                        officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat
-                        facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque
-                        earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-                        voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-                        sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
-                        Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                    <p >
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Incluir</button>
+                    <button type="button" class="btn btn-primary" onclick="add_condition()">Incluir</button>
                 </div>
             </div>
         </div>
     </div>
     <!-- End Scrolling Modal -->
 
+    <script>
+
+        function my_condition() {
+
+          var jsonObjeto =JSON.parse(GetCookie("user"));
+            $.ajax({
+                type: "POST",
+                url: GetBaseURL()+"api/my_condition",
+                data: {
+                    account: jsonObjeto.id
+                },
+                dataType: "json",
+                success: function(data) {
+
+                    select = document.getElementById('my_condition');
+                    
+                    for (i = 0; i < select.options.length; i++) {
+                        select.remove(i);
+                    }
+
+                    for (var i = 0; i<data.length ; i++){
+                        var opt = document.createElement('option');
+                        opt.value = data[i].condition;
+                        opt.innerHTML = data[i].condition;
+                        select.add( opt );
+                    }
+                },
+                error: function (data) {
+                    // console.log(data);
+                    swal({
+                        title: "Algo salió mal",
+                        text: "Por favor, intente de nuevo incluir su condición",
+                        type: "error",
+                        showCancelButton: false,
+                        closeOnConfirm: true,
+                        confirmButtonColor: "gray",
+                        cancelButtonColor: "red"
+                    }, function(){
+                        location.reload();
+                    });
+                }
+            });
+
+        }
+
+        function add_condition(){
+            var jsonObjeto =JSON.parse(GetCookie("user"));
+            console.log(jsonObjeto.id);
+            console.log($('#condition_types').val());
+            swal({   title: "¿Está seguro que desea incluir esta condición?",
+                    text: "Luego de incluirla podrá comprobar en la opción Mis Condiciones",
+                    type: "info",
+                    showCancelButton: true,
+                    //confirmButtonColor: "blue",
+                    cancelButtonColor: "red",
+                    confirmButtonText: "Incluir",
+                    cancelButtonText: "Cancelar",
+                    closeOnConfirm: false,
+                    closeOnCancel: false },
+                function(isConfirm)
+                {
+                    if (isConfirm)
+                    {
+                        $.ajax({
+                            method: 'POST',
+                            url: GetBaseURL()+"api/add_condition",
+                            data: {
+                                account: jsonObjeto.id,
+                                condition: $('#condition_types').val()
+                            }
+                        });
+                        swal({   title: "¡Listo!...Esta condición ha sido incluida",   text: "Espere un momento mientras se actualiza",   timer: 2000,   showConfirmButton: false }
+                            , function(){
+                                location.reload();
+                            });
+
+                    }
+                    else
+                    {
+                        swal("Cancelado", "","error");
+                    }
+                });
+         }
+
+    </script>
     </body>
+
+@endsection
+@section('document-ready')
+    <script>
+        $(document).ready(function() {
+
+
+
+            $('#userInfo').html(GetUser() ? GetUser().name + ' <i class="fa fa-angle-down"></i>': "" + ' <i class="fa fa-angle-down"></i>');
+            $('.username').val(GetUser() ? GetUser().name : "" );
+            $('.useremail').val(GetUser() ? GetUser().email : "" );
+
+
+        });
+
+    </script>
 
 @endsection

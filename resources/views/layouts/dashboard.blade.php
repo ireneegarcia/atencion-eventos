@@ -145,7 +145,7 @@
                     </a>
                     <ul class="dropdown-menu animated fadeInDown">
                         <li>
-                            <a  href="{{ url('/profile') }}"><i class="fa fa-user"></i> Profile</a>
+                            <a href="{{ url('/profile') }}"><i class="fa fa-user"></i> Profile</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-calendar"></i> Calendar</a>
@@ -175,7 +175,7 @@
             <div id="leftside-navigation" class="nano">
                 <ul class="nano-content">
                     <li >
-                        <a href="index.html"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
+                        <a href="{{ url('/') }}"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
                     </li>
                     <li class="sub-menu">
                         <a href="javascript:void(0);"><i class="fa fa-map-marker"></i><span>Mapas</span><i class="arrow fa fa-angle-right pull-right"></i></a>
@@ -389,14 +389,8 @@
 
 </script>
 
-<script>
-    $(document).ready(function() {
-        $('#popover-left,#popover-top,#popover-bottom,#popover-right').popover();
-        $('#tooltip-left,#tooltip-top,#tooltip-bottom,#tooltip-right').tooltip();
-
-        $('#userInfo').html(GetUser() ? GetUser().name : "" + ' <i class="fa fa-angle-down"></i>');
-    });
-</script>
+@section('document-ready')
+@show
 
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -410,14 +404,6 @@
 
 </script>
 <!--Load these page level functions-->
-<script>
-    $(document).ready(function() {
-        app.timer();
-        app.map();
-        /* app.weather();
-         app.morrisPie();*/
-    });
-</script>
 
 <!--Page Level JS-->
 <script src="{{asset('/plugins/countTo/jquery.countTo.js')}}"></script>

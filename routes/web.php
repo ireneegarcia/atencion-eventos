@@ -18,11 +18,25 @@ Route::get('/login', function () {
 Route::get('/', function () {
     return view('index');
 });
-
+//todo list
 Route::get('/', 'OperatorController@todoList');
 
 //profile
 Route::get('/profile', 'ApiAuthController@getProfile');
+
+//USUARIOS
+//clientes
+/*Route::get('/clients', 'ApiAuthController@getProfile');
+
+//servicios
+Route::get('/services', 'ApiAuthController@getProfile');
+
+//operadores
+Route::get('/operators', 'ApiAuthController@getProfile');
+
+//admin
+Route::get('/admin', 'ApiAuthController@getProfile');*/
+
 
 Route::get('/uploadfile', 'ApiAuthController@uploadPhoto');
 

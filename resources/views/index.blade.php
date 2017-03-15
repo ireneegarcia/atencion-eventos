@@ -101,3 +101,19 @@
     </body>
 
 @endsection
+@section('document-ready')
+    <script>
+        $(document).ready(function() {
+
+            $('#popover-left,#popover-top,#popover-bottom,#popover-right').popover();
+            $('#tooltip-left,#tooltip-top,#tooltip-bottom,#tooltip-right').tooltip();
+
+            $('#userInfo').html(GetUser() ? GetUser().name + ' <i class="fa fa-angle-down"></i>': "" + ' <i class="fa fa-angle-down"></i>');
+            app.timer();
+            app.map();
+            /* app.weather();
+             app.morrisPie();*/
+        });
+    </script>
+
+@endsection

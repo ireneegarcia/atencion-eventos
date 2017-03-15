@@ -25,6 +25,8 @@ Route::group(['middleware' => 'cors'], function () {
 
     // Profile
     Route::post('/save_photo', 'ApiAuthController@savePhoto');
+    Route::post('/add_condition', 'ApiAuthController@add_condition');
+    Route::post('/my_condition', 'ApiAuthController@my_condition');
 
     // Accounts
     Route::post('/save_photo', 'ApiAuthController@savePhoto');
@@ -35,9 +37,10 @@ Route::group(['middleware' => 'cors'], function () {
     Route::get('/version', 'HomeController@getVersion');
 
     //OperatorController
+    //to do
     Route::post('/storeTodo', 'OperatorController@storeTodo');
     Route::post('/doneTodo', 'OperatorController@doneTodo');
-   // Route::get('/todoList', 'OperatorController@todoList');
+
 
 });
 

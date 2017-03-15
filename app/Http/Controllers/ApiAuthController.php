@@ -2,6 +2,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Account;
+use App\Models\Account_condition;
+use App\Models\Conditions_types;
 use App\Models\EvaFirebaseToken;
 use App\Models\EvaUsuario;
 use App\Models\EvaPersona;
@@ -344,13 +346,41 @@ class ApiAuthController extends Controller
         return $result;
     }
 
-    function getProfile(Request $request)
+    function getProfile()
     {
         $profile = Account::where('id', 1)->first();
 
+        $conditions = Conditions_types::orderBy('name')->get();
+
         return view('profile', [
-            'profile' => $profile
+            'profile' => $profile,
+            'conditions' =>$conditions
         ]);
+    }
+
+    function my_condition(Request $request)
+    {
+
+        $acc_count = Account_condition::where('account', $request['account'])
+                    ->orderBy('condition', 'asc')
+                    ->get();
+
+        return response()->json( $acc_count,200);
+
+    }
+
+    function add_condition(Request $request)
+    {
+        $newCondition = new Account_condition();
+        $newCondition->condition = $request['condition'];
+        $newCondition->account = $request['account'];
+
+        if(!$newCondition->save())
+        {
+            return response()->json(500);
+        }
+
+        return response()->json(200);
     }
 
 }
