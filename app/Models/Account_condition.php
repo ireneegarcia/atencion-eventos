@@ -8,7 +8,7 @@ class Account_condition extends Model
 {
 
     protected $table = 'account_condition';
-    public $primaryKey = 'account';
+   // public $primaryKey = 'account';
     public $timestamps = false;
 
 }

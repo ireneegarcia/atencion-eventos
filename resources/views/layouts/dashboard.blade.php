@@ -435,5 +435,10 @@
 <!-- ToDo List  -->
 <script src="{{asset('/plugins/todo/js/todos.js')}}"></script>
 
+<!--Validation Profile-->
+<script src="{{asset('/plugins/icheck/js/icheck.min.js')}}"></script>
+<script src="{{asset('/plugins/validation/js/jquery.validate.min.js')}}"></script>
+<script src="{{asset('/plugins/validation/js/jquery.validate.min.js')}}"></script>
+
 </body>
 </html>

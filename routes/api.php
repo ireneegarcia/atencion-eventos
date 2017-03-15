@@ -27,6 +27,8 @@ Route::group(['middleware' => 'cors'], function () {
     Route::post('/save_photo', 'ApiAuthController@savePhoto');
     Route::post('/add_condition', 'ApiAuthController@add_condition');
     Route::post('/my_condition', 'ApiAuthController@my_condition');
+    Route::post('/add_contact', 'ApiAuthController@add_contact');
+    Route::post('/my_contact', 'ApiAuthController@my_contact');
 
     // Accounts
     Route::post('/save_photo', 'ApiAuthController@savePhoto');
