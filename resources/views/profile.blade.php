@@ -21,7 +21,7 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 id="userInfo" class="panel-title">Información del usuario</h3>
+                    <h3 class="panel-title">Información del usuario</h3>
                     <div class="actions pull-right">
                         <i class="fa fa-chevron-down"></i>
                         <i class="fa fa-times"></i>

@@ -6,6 +6,7 @@
 
 @section('content')
     <body>
+
     <div class="col-md-12">
         <!--breadcrumbs start -->
         <ul class="breadcrumb">
@@ -25,9 +26,9 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">
-                        <a href="{{ url('/signup') }}">
+                        <a href="{{ url('/signup/2') }}">
                             <i class="fa fa-user"></i>
-                            <span>Registrar nuevo usuario cliente</span>
+                            <span>Registrar nuevo usuario cliente </span>
                         </a>
                     </h3>
                     <div class="actions pull-right">

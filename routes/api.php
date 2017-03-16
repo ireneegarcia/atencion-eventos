@@ -25,10 +25,10 @@ Route::group(['middleware' => 'cors'], function () {
 
     // Profile
     Route::post('/save_photo', 'ApiAuthController@savePhoto');
-    Route::post('/add_condition', 'ApiAuthController@add_condition');
-    Route::post('/my_condition', 'ApiAuthController@my_condition');
-    Route::post('/add_contact', 'ApiAuthController@add_contact');
-    Route::post('/my_contact', 'ApiAuthController@my_contact');
+    Route::post('/add_condition', 'OperatorController@add_condition');
+    Route::post('/my_condition', 'OperatorController@my_condition');
+    Route::post('/add_contact', 'OperatorController@add_contact');
+    Route::post('/my_contact', 'OperatorController@my_contact');
 
     // Accounts
     Route::post('/save_photo', 'ApiAuthController@savePhoto');

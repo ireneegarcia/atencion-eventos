@@ -16,18 +16,16 @@ Route::get('/login', function () {
 });
 
 Route::get('/', function () {
-    return view('clients');
+    return view('index');
 });
 //todo list
 Route::get('/', 'OperatorController@todoList');
 
 //profile
-Route::get('/profile', 'ApiAuthController@getProfile');
+Route::get('/profile', 'OperatorController@getProfile');
 
 //Register
-Route::get('/signup', function () {
-    return view('signup');
-});
+Route::get('/signup/{role}', 'OperatorController@getSignup');
 
 //USUARIOS
 //clientes
