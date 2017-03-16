@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Account;
 use Illuminate\Http\Request;
 
 use App\Models\Todo;
@@ -57,4 +58,53 @@ class OperatorController extends Controller
     }
 
 
+    //Controladores para los tipos de usuarios
+
+    //Clientes
+    function getClients()
+    {
+        $clients = Account::where('role', 2)
+                ->orderBy('name', 'asc')
+                ->get();
+
+        return view('clients', [
+            'clients' => $clients
+        ]);
+    }
+
+    //Servicios
+    function getServices()
+    {
+        $services = Account::where('role', 3)
+                ->orderBy('name', 'asc')
+                ->get();
+
+        return view('services', [
+            'services' => $services
+        ]);
+    }
+
+    //Operadores
+    function getOperators()
+    {
+        $operators = Account::where('role', 4)
+                ->orderBy('name', 'asc')
+                ->get();
+
+        return view('operators', [
+            'operators' => $operators
+        ]);
+    }
+
+    //Admin
+    function getAdmin()
+    {
+        $admins = Account::where('role', 1)
+                ->orderBy('name', 'asc')
+                ->get();
+
+        return view('admin', [
+            'admins' => $admins
+        ]);
+    }
 }

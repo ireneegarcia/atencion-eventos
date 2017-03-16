@@ -49,6 +49,8 @@
         @media screen and (max-height:550px){html {overflow-y:visible;} .row{margin-right: -15px;}}
     </style>
 
+
+
 </head>
 <body>
 @section('content')

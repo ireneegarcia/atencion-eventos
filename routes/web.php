@@ -16,7 +16,7 @@ Route::get('/login', function () {
 });
 
 Route::get('/', function () {
-    return view('index');
+    return view('clients');
 });
 //todo list
 Route::get('/', 'OperatorController@todoList');
@@ -24,18 +24,23 @@ Route::get('/', 'OperatorController@todoList');
 //profile
 Route::get('/profile', 'ApiAuthController@getProfile');
 
+//Register
+Route::get('/signup', function () {
+    return view('signup');
+});
+
 //USUARIOS
 //clientes
-/*Route::get('/clients', 'ApiAuthController@getProfile');
+Route::get('/clients', 'OperatorController@getClients');
 
 //servicios
-Route::get('/services', 'ApiAuthController@getProfile');
+Route::get('/services', 'OperatorController@getServices');
 
 //operadores
-Route::get('/operators', 'ApiAuthController@getProfile');
+Route::get('/operators', 'OperatorController@getOperators');
 
 //admin
-Route::get('/admin', 'ApiAuthController@getProfile');*/
+Route::get('/admin', 'OperatorController@getAdmin');
 
 
 Route::get('/uploadfile', 'ApiAuthController@uploadPhoto');
