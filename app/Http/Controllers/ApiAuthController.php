@@ -129,7 +129,7 @@ class ApiAuthController extends Controller
         ]);
 
         if ($v->fails()) {
-            return response()->json(["success" => "False", "error" => "Faltan datos. Debe indicar: email, password, name, phone, ci, in_cne, role"], 422);
+            return response()->json(["success" => "False", "error" => "Faltan datos. Debe indicar: email, password, nombre, teléfono, ci, role"], 422);
         }
 
         // Valida si el correo exista
@@ -143,7 +143,7 @@ class ApiAuthController extends Controller
         ]);
 
         if ($v->fails()) {
-            return response()->json(["success" => "False", "Error" => "Correo invalido"], 422);
+            return response()->json(["success" => "False", "Error" => "Correo inválido"], 422);
         }
 
         $usuario = Account::byCI($request->ci);
@@ -155,7 +155,7 @@ class ApiAuthController extends Controller
         $rolefinded = Role::where('id',$request->role)->first();
 
         if (!$rolefinded){
-            return response()->json(["success" => "False", "description" => "ERROR: Usted ha indicado un rol que no es valido"], 404);
+            return response()->json(["success" => "False", "description" => "ERROR: Usted ha indicado un rol que no es válido"], 404);
         }
 
 

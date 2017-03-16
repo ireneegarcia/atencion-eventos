@@ -27,16 +27,24 @@
                         <i class="fa fa-times"></i>
                     </div>
                 </div>
+
+
+
                 <div class="panel-body">
                     <form class="form-horizontal form-border">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nombre completo</label>
-
-                            <input type="text" disabled="disabled" class="form-control username" placeholder="Nombre completo">
+                            <div class="input-group ">
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <input type="text" disabled="disabled" class="form-control username" placeholder="Nombre completo">
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email</label>
-                            <input type="email" disabled="disabled" class="form-control useremail" id="exampleInputEmail1" placeholder="Email">
+                            <div class="input-group ">
+                                <span class="input-group-addon">@</span>
+                                    <input type="email" disabled="disabled" class="form-control useremail" id="exampleInputEmail1" placeholder="Email">
+                            </div>
                         </div>
                     </form>
                 </div>

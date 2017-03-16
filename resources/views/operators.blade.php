@@ -24,7 +24,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">
-                        <a href="{{ url('/signup') }}">
+                        <a href="{{ url('/signup/4') }}">
                             <i class="fa fa-user"></i>
                             <span>Registrar nuevo usuario operador</span>
                         </a>

@@ -34,29 +34,47 @@
 
                     <form role="form" id="form">
                         <div class="form-group">
-                            <label class="control-label">Nombre completo del contacto</label>
+                            <label class="control-label">
+                                <i class="fa fa-user"></i>
+                                Nombre completo del contacto
+                            </label>
                             <input type="text" class="form-control" name="input1" id="input1" required="" placeholder="Nombre completo">
                         </div>
                         <div class="form-group">
-                            <label class="control-label">Cédula</label>
+                            <label class="control-label">
+                                <i class="fa fa-user"></i>
+                                Cédula
+                            </label>
                             <input type="text" class="form-control " name="input15" id="input15" required="" placeholder="Cédula">
                         </div>
                         <div class="form-group">
-                            <label class="control-label">Email</label>
+                            <label class="control-label">
+                                <i class="fa fa-envelope"></i>
+                                Email
+                            </label>
                             <input type="email" class="form-control " required="" name="input9" id="input9" placeholder="Enter a valid e-mail">
                         </div>
                         <div class="form-group">
-                            <label class="control-label">Número de teléfono</label>
+                            <label class="control-label">
+                                <i class="fa fa-phone"></i>
+                                Número de teléfono
+                            </label>
                             <input type="text" class="form-control " name="input11" id="input11" required="" placeholder="Número de teléfono">
                         </div>
                         <div class="form-group">
-                            <label class="control-label">Password</label>
+                            <label class="control-label">
+                                <i class="fa fa-lock"></i>
+                                Password
+                            </label>
                             <input type="password" class="form-control " name="input7" id="input7" required="" placeholder="Password">
                             <br/>
                             <input type="password" class="form-control " required="" name="input8" id="input8" placeholder="Re-Type Password">
                         </div>
                         <div class="form-group">
-                            <label class="control-label">Rol</label>
+                            <label class="control-label">
+                                <i class="fa fa-users"></i>
+                                Rol
+                            </label>
                             <input type="text" id="role" value ="{{$role}}" class="form-control" disabled="disabled" placeholder="Rol del usuarios">
                         </div>
 
@@ -79,11 +97,11 @@
 
         var opc;
         function registrer() {
-            /*console.log($('#input9').val());
+            console.log($('#input9').val());
             console.log($('#input7').val());
             console.log($('#input1').val());
             console.log($('#input11').val());
-            console.log($('#input15').val());*/
+            console.log($('#input15').val());
             $.ajax({
                 type: "POST",
                 url: GetBaseURL()+"api/register",
@@ -108,7 +126,7 @@
                     console.log(data);
                     swal({
                         title: "Algo salió mal",
-                        text: data.responseJSON.error,
+                        text: "Por favor, vuelva a intentar registrar el usuario ",
                         type: "error",
                         showCancelButton: false,
                         closeOnConfirm: true,
@@ -164,9 +182,9 @@
                     $(element).closest('.form-group').removeClass('success').addClass('error');
                 },
                 success: function(element) {
-                 element.text('OK!').addClass('valid')
-                 .closest('.form-group').removeClass('error').addClass('success');
-                 }
+                    element.text('OK!').addClass('valid')
+                        .closest('.form-group').removeClass('error').addClass('success');
+                }
             });
 
         });
@@ -187,30 +205,30 @@
         if(opc == 3)
         {
             $('#role').val("Service");
-           // console.log("Service");
+            // console.log("Service");
         }
         if(opc == 4)
         {
             $('#role').val("Operador");
-           // console.log("Operador");
+            // console.log("Operador");
         }
 
-     /*   switch(opc) {
-            case 2:
-                console.log("Admin");
-                break;
-            case 1:
-                console.log("Client");
-                break;
-            case 3:
-                console.log("Service");
-                break;
-            case 4:
-                console.log("Operador");
-                break;
-            default:
-                console.log("error");
-        }*/
+        /*   switch(opc) {
+         case 2:
+         console.log("Admin");
+         break;
+         case 1:
+         console.log("Client");
+         break;
+         case 3:
+         console.log("Service");
+         break;
+         case 4:
+         console.log("Operador");
+         break;
+         default:
+         console.log("error");
+         }*/
 
     </script>
 @endsection
