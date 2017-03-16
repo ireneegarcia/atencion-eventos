@@ -189,7 +189,7 @@ class ApiAuthController extends Controller
         if ($save) {
             $account->save();
         }
-        return response()->json(["success" => "True", "account" => $account], 422);
+        return response()->json(["success" => "True", "account" => $account], 200);
     }
 
     public function validRegister(Request $request)

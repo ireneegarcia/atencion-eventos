@@ -79,11 +79,11 @@
 
         var opc;
         function registrer() {
-            console.log($('#input9').val());
+            /*console.log($('#input9').val());
             console.log($('#input7').val());
             console.log($('#input1').val());
             console.log($('#input11').val());
-            console.log($('#input15').val());
+            console.log($('#input15').val());*/
             $.ajax({
                 type: "POST",
                 url: GetBaseURL()+"api/register",
@@ -108,7 +108,7 @@
                     console.log(data);
                     swal({
                         title: "Algo salió mal",
-                        text: "Por favor, vuelva a intentar registrar el usuario ",
+                        text: data.responseJSON.error,
                         type: "error",
                         showCancelButton: false,
                         closeOnConfirm: true,
