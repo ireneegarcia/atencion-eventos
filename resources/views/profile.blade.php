@@ -88,7 +88,7 @@
                         </button>
 
                         <!-- Button trigger modal -->
-                        <button class="btn btn-primary " data-toggle="modal" data-target="#scrollingModal" onclick="my_condition()">
+                        <button class="btn btn-primary " data-toggle="modal" data-target="#scrollingModal" >
                             Mis condiciones
                         </button>
                     </div>
@@ -155,7 +155,7 @@
                             </button>
 
                             <!-- Button trigger modal -->
-                            <button class="btn btn-primary " data-toggle="modal" data-target="#scrollingModalContact" onclick="my_contact()">
+                            <button class="btn btn-primary " data-toggle="modal" data-target="#scrollingModalContact" >
                                 Mis contactos
                             </button>
                         </div>
@@ -482,6 +482,9 @@
             $('#userInfo').html(GetUser() ? GetUser().name + ' <i class="fa fa-angle-down"></i>': "" + ' <i class="fa fa-angle-down"></i>');
             $('.username').val(GetUser() ? GetUser().name : "" );
             $('.useremail').val(GetUser() ? GetUser().email : "" );
+
+            my_condition();
+            my_contact();
 
             $('#form').validate({
                 rules: {

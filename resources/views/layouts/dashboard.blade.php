@@ -181,9 +181,9 @@
                         <a href="javascript:void(0);"><i class="fa fa-map-marker"></i><span>Mapas</span><i class="arrow fa fa-angle-right pull-right"></i></a>
                         <ul>
 
-                            <li><a href="{{ url('/mapgoogle') }}">Google Map</a>
+                            <li><a href="{{ url('/mapgoogle') }}">Google Map - Eventos</a>
                             </li>
-                            <li><a href="{{ url('/mapvector') }}">Vector Map</a>
+                            <li><a href="{{ url('/mapvector') }}">Vector Map - Oficinas</a>
                             </li>
                         </ul>
                     </li>

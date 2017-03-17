@@ -25,7 +25,10 @@
                 <div class="col-md-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Mapa mundial - Oficinas internacionales</h3>
+                            <h3 class="panel-title">
+                                <i class="fa fa-map-marker"></i>
+                                Mapa mundial - Oficinas internacionales
+                            </h3>
                             <div class="actions pull-right">
                                 <i class="fa fa-chevron-down"></i>
                                 <i class="fa fa-times"></i>
@@ -40,7 +43,10 @@
                 <div class="col-md-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Mapa de Venezuela - Oficinas nacionales</h3>
+                            <h3 class="panel-title">
+                                <i class="fa fa-map-marker"></i>
+                                Mapa de Venezuela - Oficinas nacionales
+                            </h3>
                             <div class="actions pull-right">
                                 <i class="fa fa-chevron-down"></i>
                                 <i class="fa fa-times"></i>
