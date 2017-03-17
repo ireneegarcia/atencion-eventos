@@ -18,6 +18,15 @@ Route::get('/login', function () {
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/mapvector', function () {
+    return view('mapvector');
+});
+
+Route::get('/mapgoogle', function () {
+    return view('mapgoogle');
+});
+
 //todo list
 Route::get('/', 'OperatorController@todoList');
 

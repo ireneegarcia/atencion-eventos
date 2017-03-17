@@ -200,23 +200,23 @@ class ApiAuthController extends Controller
     public function savePhoto(Request $request, $save = true, $is_ci = false)
     {
 
-        if (($is_ci && $request->ci_photo == null) || (!$is_ci && $request->photo == null)) {
+        if (!$is_ci && $request->photo == null) {
             return response()->json(["success" => "False", "error" => "No se ha adjuntado ninguna foto"], 422);
         }
 
-        $field_name = ($is_ci ? 'ci_photo' : 'photo');
+        //$field_name = 'photo';
 
         $v = Validator::make($request->all(), [
-            $field_name => 'image|mimes:jpeg,png,jpg,gif,svg',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
         if ($v->fails()) {
-            return response()->json(["success" => "False", "error" => "La foto debe tener un formato valido (jpeg,png,jpg,gif,svg)"], 422);
+            return response()->json(["success" => "False", "error" => "La foto debe tener un formato válido (jpeg,png,jpg,gif,svg)"], 422);
 
         }
 
         $v = Validator::make($request->all(), [
-            $field_name => 'max:2048',
+            'photo' => 'max:2048',
         ]);
 
         if ($v->fails()) {
@@ -233,7 +233,7 @@ class ApiAuthController extends Controller
         }
 
         if ($save) {
-            $image = $request->file($field_name);
+            $image = $request->file('photo');
             $input['imagename'] = $request->ci . '.' . $image->getClientOriginalExtension();
             if ($is_ci) {
                 $destinationPath = public_path('/images/ci/');

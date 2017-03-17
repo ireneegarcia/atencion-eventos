@@ -77,6 +77,13 @@
                             </label>
                             <input type="text" id="role" value ="{{$role}}" class="form-control" disabled="disabled" placeholder="Rol del usuarios">
                         </div>
+                        <div class="form-group">
+                            <label for="exampleInputFile">
+                                <i class="fa fa-camera"></i>
+                                Foto de perfil
+                            </label>
+                            <input type="file" id="exampleInputFile">
+                        </div>
 
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" onclick="registrer()">
@@ -97,11 +104,12 @@
 
         var opc;
         function registrer() {
-            console.log($('#input9').val());
+            /*console.log($('#input9').val());
             console.log($('#input7').val());
             console.log($('#input1').val());
             console.log($('#input11').val());
             console.log($('#input15').val());
+            console.log($('#exampleInputFile').val());*/
             $.ajax({
                 type: "POST",
                 url: GetBaseURL()+"api/register",
@@ -111,7 +119,8 @@
                     name: $('#input1').val(),
                     phone: $('#input11').val(),
                     ci: $('#input15').val(),
-                    role: opc
+                    role: opc,
+                    photo: $('#exampleInputFile').val()
                 },
                 dataType: "json",
                 success: function(data) {
@@ -126,7 +135,7 @@
                     console.log(data);
                     swal({
                         title: "Algo salió mal",
-                        text: "Por favor, vuelva a intentar registrar el usuario ",
+                        text: data.responseJSON.error,
                         type: "error",
                         showCancelButton: false,
                         closeOnConfirm: true,

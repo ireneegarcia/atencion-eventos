@@ -10,7 +10,7 @@
     <div class="col-md-12">
         <!--breadcrumbs start -->
         <ul class="breadcrumb">
-            <li><a href="#">Dashboard</a>
+            <li>Dashboard
             </li>
             <li>Usuarios</li>
             <li class="active">Clientes</li>

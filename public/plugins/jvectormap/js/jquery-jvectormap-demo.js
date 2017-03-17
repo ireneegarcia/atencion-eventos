@@ -160,5 +160,25 @@ $('#united-kingdom-map').vectorMap({map: 'uk_mill_en',
                 "stroke-width": 3
               }
             }});
+$('#ve-map').vectorMap({map: 've_mill',
+          backgroundColor: 'transparent',
+          regionStyle: {
+            initial: {
+              fill: '#1ABC9C',
+            },
+            hover: {
+              "fill-opacity": 0.8
+            }
+          },
+          markerStyle:{
+              initial:{
+                r: 10
+              },
+               hover: {
+                r: 12,
+                stroke: 'rgba(255,255,255,0.8)',
+                "stroke-width": 3
+              }
+            }});
 
   });

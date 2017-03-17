@@ -181,9 +181,9 @@
                         <a href="javascript:void(0);"><i class="fa fa-map-marker"></i><span>Mapas</span><i class="arrow fa fa-angle-right pull-right"></i></a>
                         <ul>
 
-                            <li><a href="ui-alerts-notifications.html">Google Map</a>
+                            <li><a href="{{ url('/mapgoogle') }}">Google Map</a>
                             </li>
-                            <li><a href="ui-panels.html">Vector Map</a>
+                            <li><a href="{{ url('/mapvector') }}">Vector Map</a>
                             </li>
                         </ul>
                     </li>
@@ -429,9 +429,20 @@
 <!-- Morris  -->
 <script src="{{asset('/plugins/morris/js/morris.min.js')}}"></script>
 <script src="{{asset('/plugins/morris/js/raphael.2.1.0.min.js')}}"></script>
+
 <!-- Vector Map  -->
+
 <script src="{{asset('/plugins/jvectormap/js/jquery-jvectormap-1.2.2.min.js')}}"></script>
 <script src="{{asset('/plugins/jvectormap/js/jquery-jvectormap-world-mill-en.js')}}"></script>
+<script src="{{asset('/plugins/jvectormap/js/jquery-jvectormap-europe-mill-en.js')}}"></script>
+<script src="{{asset('/plugins/jvectormap/js/jquery-jvectormap-ca-lcc-en.js')}}"></script>
+<script src="{{asset('/plugins/jvectormap/js/jquery-jvectormap-it-mill-en.js')}}"></script>
+<script src="{{asset('/plugins/jvectormap/js/jquery-jvectormap-us-aea-en.js')}}"></script>
+<script src="{{asset('/plugins/jvectormap/js/jquery-jvectormap-us-il-chicago-mill-en.js')}}"></script>
+<script src="{{asset('/plugins/jvectormap/js/jquery-jvectormap-us-ny-newyork-mill-en.js')}}"></script>
+<script src="{{asset('/plugins/jvectormap/js/jquery-jvectormap-uk-mill-en.js')}}"></script>
+<script src="{{asset('/plugins/jvectormap/js/jquery-jvectormap-ve-mill.js')}}"></script>
+<script src="{{asset('/plugins/jvectormap/js/jquery-jvectormap-demo.js')}}"></script>
 <!-- ToDo List  -->
 <script src="{{asset('/plugins/todo/js/todos.js')}}"></script>
 
