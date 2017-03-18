@@ -445,9 +445,8 @@
 <script src="{{asset('/plugins/jvectormap/js/jquery-jvectormap-demo.js')}}"></script>
 
 <!--Google Maps-->
-<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-<script src="{{asset('/plugins/gmaps/gmaps.js')}}"></script>
-<script src="{{asset('/plugins/gmaps/gmaps-demo.js')}}"></script>
+
+
 
 <!-- ToDo List  -->
 <script src="{{asset('/plugins/todo/js/todos.js')}}"></script>

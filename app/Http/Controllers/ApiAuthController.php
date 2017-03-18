@@ -197,10 +197,10 @@ class ApiAuthController extends Controller
         return $this->register($request, false);
     }
 
-    public function savePhoto(Request $request, $save = true, $is_ci = false)
+    public function savePhoto(Request $request, $save = true)
     {
 
-        if (!$is_ci && $request->photo == null) {
+        if ($request->photo == null) {
             return response()->json(["success" => "False", "error" => "No se ha adjuntado ninguna foto"], 422);
         }
 

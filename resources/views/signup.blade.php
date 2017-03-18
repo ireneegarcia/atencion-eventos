@@ -77,13 +77,7 @@
                             </label>
                             <input type="text" id="role" value ="{{$role}}" class="form-control" disabled="disabled" placeholder="Rol del usuarios">
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputFile">
-                                <i class="fa fa-camera"></i>
-                                Foto de perfil
-                            </label>
-                            <input type="file" id="exampleInputFile">
-                        </div>
+
 
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" onclick="registrer()">
@@ -119,8 +113,7 @@
                     name: $('#input1').val(),
                     phone: $('#input11').val(),
                     ci: $('#input15').val(),
-                    role: opc,
-                    photo: $('#exampleInputFile').val()
+                    role: opc
                 },
                 dataType: "json",
                 success: function(data) {

@@ -17,18 +17,18 @@
         <!--breadcrumbs end -->
     </div>
     <!--main content start-->
-    <section >
-        <section >
-            <div class="row">
-                <div class="col-md-12">
-                    <!--breadcrumbs start -->
+    <!--  <section >
+          <section >
+              <div class="row">
+                  <div class="col-md-12">
+
                     <ul class="breadcrumb">
                         <li><a href="#">Dashboard</a>
                         </li>
                         <li>Maps</li>
                         <li class="active">Google Maps</li>
                     </ul>
-                    <!--breadcrumbs end -->
+
                     <h1 class="h1">Google Maps</h1>
                 </div>
             </div>
@@ -67,7 +67,7 @@
             </div>
 
         </section>
-    </section>
+    </section>-->
     <!--main content end-->
 
     </body>

@@ -43,7 +43,7 @@
                             <label for="exampleInputEmail1">Email</label>
                             <div class="input-group ">
                                 <span class="input-group-addon">@</span>
-                                    <input type="email" disabled="disabled" class="form-control useremail" id="exampleInputEmail1" placeholder="Email">
+                                <input type="email" disabled="disabled" class="form-control useremail" id="exampleInputEmail1" placeholder="Email">
                             </div>
                         </div>
                     </form>
@@ -159,8 +159,42 @@
                                 Mis contactos
                             </button>
                         </div>
+
                     </form>
                 </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+                    <h3 class="panel-title">Foto de perfil</h3>
+                    <div class="actions pull-right">
+                        <i class="fa fa-chevron-down"></i>
+                        <i class="fa fa-times"></i>
+                    </div>
+                </div>
+
+                <div class="panel-body">
+                    <form class="form-horizontal form-border" id="form">
+
+                        <div class="form-group">
+                            <input type="file" id="exampleInputFile">
+                        </div>
+
+                        <div class="row">
+                            <button type="button" class="btn btn-primary" onclick="save_photo()">
+                                Guardar foto de perfil
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+
             </div>
         </div>
     </div>
@@ -223,6 +257,43 @@
 
     <script>
 
+        //GUARDAR FOTO DE PERFIL
+        function save_photo() {
+            //photo: $('#exampleInputFile').val()
+            var jsonObjeto =JSON.parse(GetCookie("user"));
+            $.ajax({
+                type: "POST",
+                url: GetBaseURL()+"api/save_photo",
+                data: {
+                    account: jsonObjeto.id,
+                    ci: jsonObjeto.ci,
+                    photo: $('#exampleInputFile').val()
+                },
+                dataType: "json",
+                success: function(data) {
+
+                    swal({
+                        title: "Listo",
+                        text: "Foto guardada exitosamente",
+                        type: "success"
+                    });
+                },
+                error: function (data) {
+                    console.log(data);
+                    swal({
+                        title: "Algo salió mal",
+                        text: data.responseJSON.error,
+                        type: "error",
+                        showCancelButton: false,
+                        closeOnConfirm: true,
+                        confirmButtonColor: "gray",
+                        cancelButtonColor: "red"
+                    }, function(){
+                        //  location.reload();
+                    });
+                }
+            });
+        }
         //INICIO CONDICIONES
         function my_condition() {
 
