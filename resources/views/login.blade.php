@@ -32,7 +32,7 @@
                                 <div class="col-md-12">
                                     <input type="password" class="form-control" id="password" placeholder="Password" value="1234567">
                                     <i class="fa fa-lock"></i>
-                                    <a href="javascript:void(0)" class="help-block">¿Olvidó su clave?</a>
+                                    <a href="{{ url('/forgotPassword') }}" class="help-block">¿Olvidó su clave?</a>
                                 </div>
                             </div>
                             <div class="form-group">

@@ -195,4 +195,6 @@ class OperatorController extends Controller
             'role' => $role
         ]);
     }
+
+
 }

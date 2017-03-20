@@ -42,6 +42,7 @@
     <script src="{{asset('/js/html5shiv.js')}}"></script>
     <script src="{{asset('/js/respond.min.js')}}"></script>
     <![endif]-->
+    <link rel="stylesheet" href="{{asset('/css/style.css')}}">
 </head>
 <body>
 
@@ -444,9 +445,8 @@
 <script src="{{asset('/plugins/jvectormap/js/jquery-jvectormap-ve-mill.js')}}"></script>
 <script src="{{asset('/plugins/jvectormap/js/jquery-jvectormap-demo.js')}}"></script>
 
-<!--Google Maps-->
-
-
+<!--Form mask-->
+<script src="{{asset('/plugins/mask/js/jquery.maskedinput.min.js')}}"></script>
 
 <!-- ToDo List  -->
 <script src="{{asset('/plugins/todo/js/todos.js')}}"></script>

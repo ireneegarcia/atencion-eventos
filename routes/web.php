@@ -27,6 +27,11 @@ Route::get('/mapgoogle', function () {
     return view('mapgoogle');
 });
 
+
+Route::get('/forgotPassword', function () {
+    return view('forgotPassword');
+});
+
 //todo list
 Route::get('/', 'OperatorController@todoList');
 

@@ -45,9 +45,20 @@
                                 <i class="fa fa-user"></i>
                                 Cédula
                             </label>
-                            <input type="text" class="form-control " name="input15" id="input15" required="" placeholder="Cédula">
+
+                            <div>
+                                <select id="tipo_cedula" class="form-control col-sm-2" >
+                                    <option value="V-">V-</option>
+                                    <option value="E-">E-</option>
+                                </select>
+
+                                <div class="col-sm-11">
+                                    <input type="text" class="form-control" name="input15" id="input15" required="" placeholder="V-99999999">
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
+
+                        <div id="form-email" class="form-group">
                             <label class="control-label">
                                 <i class="fa fa-envelope"></i>
                                 Email
@@ -99,11 +110,13 @@
         var opc;
         function registrer() {
             /*console.log($('#input9').val());
-            console.log($('#input7').val());
-            console.log($('#input1').val());
-            console.log($('#input11').val());
-            console.log($('#input15').val());
-            console.log($('#exampleInputFile').val());*/
+             console.log($('#input7').val());
+             console.log($('#input1').val());
+             console.log($('#input11').val());
+             console.log($('#input15').val());
+             console.log($('#exampleInputFile').val());*/
+            var cedula = $('#tipo_cedula').val() + $('#input15').val();
+            console.log(cedula);
             $.ajax({
                 type: "POST",
                 url: GetBaseURL()+"api/register",
@@ -112,7 +125,7 @@
                     password: $('#input7').val(),
                     name: $('#input1').val(),
                     phone: $('#input11').val(),
-                    ci: $('#input15').val(),
+                    ci: cedula,
                     role: opc
                 },
                 dataType: "json",
@@ -142,7 +155,6 @@
         $(document).ready(function() {
 
             $('#userInfo').html(GetUser() ? GetUser().name + ' <i class="fa fa-angle-down"></i>': "" + ' <i class="fa fa-angle-down"></i>');
-
 
             $('#form').validate({
                 rules: {
