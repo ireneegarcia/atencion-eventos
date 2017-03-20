@@ -257,7 +257,7 @@ class ApiAuthController extends Controller
 
 
         if ($request->email == null && $request->ci == null) {
-            return response()->json(["success" => "False", "description" => "ERROR: Debe indicar el correo o la ci"], 400);
+            return response()->json(["success" => "False", "error" => "Debe indicar el correo o la ci"], 400);
         }
 
         if ($request->email) {
@@ -271,7 +271,7 @@ class ApiAuthController extends Controller
         $account = Account::where($fieldTargetName, $fieldValue)->first();
 
         if ($account == null) {
-            return response()->json(["success" => "False", "description" => "ERROR: No existe ningun usuario con " . $fieldTargetName . " " . $fieldValue], 404);
+            return response()->json(["success" => "False", "error" => "No existe ningun usuario con " . $fieldTargetName . " " . $fieldValue], 404);
         }
 
         $newRandomPassword = $this->randomPassword($newPassLen);
@@ -287,7 +287,7 @@ class ApiAuthController extends Controller
         $account->save();
 
         if (!$account->save()) {
-            return response()->json(["success" => "False", "description" => "ERROR: Problema al guardar en la bd"], 500);
+            return response()->json(["success" => "False", "error" => "Problema al guardar en la bd"], 500);
         }
 
         return response()->json(["success" => "True", "description" => "Email enviado con exito a su correo"], 200);

@@ -56,12 +56,18 @@ function IsLogged() {
 }
 
 function VerifyLogged() {
-    if (window.location.href!=GetBaseURL()+"login" && !IsLogged()) {
-        RedirectionTo(GetBaseURL()+"login");
+
+    if(window.location.href != GetBaseURL() + "forgotPassword"){
+
+
+        if (window.location.href != GetBaseURL() + "login" && !IsLogged()) {
+            RedirectionTo(GetBaseURL() + "login");
+        }
+        else if (window.location.href == GetBaseURL() + "login" && IsLogged()) {
+            RedirectionTo(GetBaseURL());
+        }
     }
-    else if (window.location.href==GetBaseURL()+"login" && IsLogged()) {
-        RedirectionTo(GetBaseURL());
-    }
+
 }
 
 $(document).ready(function() {
