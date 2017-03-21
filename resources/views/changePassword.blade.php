@@ -78,10 +78,12 @@
                             </label>
                             <input type="password" class="form-control " required=""  name="input8" id="input8" placeholder="Re-Type Password">
                         </div>
+                        <div class="row">
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" >
                             Cambiar clave
                         </button>
+                        </div>
                     </form>
                 </div>
             </div>
