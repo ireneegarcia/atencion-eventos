@@ -146,10 +146,10 @@
                     </a>
                     <ul class="dropdown-menu animated fadeInDown">
                         <li>
-                            <a href="{{ url('/profile') }}"><i class="fa fa-user"></i> Profile</a>
+                            <a href="{{ url('/profile') }}"><i class="fa fa-user"></i> Perfil</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-calendar"></i> Calendar</a>
+                            <a href="{{ url('/changePassword') }}"><i class="fa fa-lock"></i> Cambio de clave</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-envelope"></i> Inbox <span class="badge badge-danager" id="user-inbox">5</span></a>

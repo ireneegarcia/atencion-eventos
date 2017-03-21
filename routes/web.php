@@ -32,6 +32,10 @@ Route::get('/forgotPassword', function () {
     return view('forgotPassword');
 });
 
+Route::get('/changePassword', function () {
+    return view('changePassword');
+});
+
 //todo list
 Route::get('/', 'OperatorController@todoList');
 

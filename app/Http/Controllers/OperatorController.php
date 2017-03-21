@@ -131,6 +131,14 @@ class OperatorController extends Controller
             'relationship_types' =>$relationship_types
         ]);
     }
+    //CAMBIO DE CLAVE
+    function myProfile($role)
+    {
+
+        return view('changePassword', [
+            'profile' => $profile
+        ]);;
+    }
 
     function my_condition(Request $request)
     {
@@ -195,6 +203,5 @@ class OperatorController extends Controller
             'role' => $role
         ]);
     }
-
 
 }
