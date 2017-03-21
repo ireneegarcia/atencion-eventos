@@ -98,8 +98,7 @@
 
         function change() {
 
-            console.log($('#input7').val());
-            console.log($('#input8').val());
+
             var jsonObjeto =JSON.parse(GetCookie("user"));
 
             $.ajax({
@@ -108,7 +107,7 @@
                 data: {
                     old_password: $('#input7').val(),
                     new_password: $('#input8').val(),
-                    id: jsonObjeto
+                    user: jsonObjeto
                 },
                 dataType: "json",
                 success: function(data) {
