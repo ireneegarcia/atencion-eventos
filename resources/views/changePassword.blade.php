@@ -64,7 +64,7 @@
 
 
                 <div class="panel-body">
-                    <form role="form" id="form">
+                    <form class="form-horizontal form-border" role="form" id="form">
                         <div class="form-group">
                             <label class="control-label">
                                 <i class="fa fa-lock"></i>
