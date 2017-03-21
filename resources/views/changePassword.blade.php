@@ -79,10 +79,10 @@
                             <input type="password" class="form-control " required=""  name="input8" id="input8" placeholder="Re-Type Password">
                         </div>
                         <div class="row">
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" >
-                            Cambiar clave
-                        </button>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" onclick="change()">
+                                Cambiar clave
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -95,6 +95,48 @@
 
 @section('document-ready')
     <script>
+
+        function change() {
+
+            console.log($('#input7').val());
+            console.log($('#input8').val());
+            var jsonObjeto =JSON.parse(GetCookie("user"));
+
+            $.ajax({
+                type: "POST",
+                url: GetBaseURL()+"api/change_password",
+                data: {
+                    old_password: $('#input7').val(),
+                    new_password: $('#input8').val(),
+                    id: jsonObjeto
+                },
+                dataType: "json",
+                success: function(data) {
+
+                    swal({
+                        title: "Listo",
+                        text: "Su contaseña ha sido cambiada exitosamente",
+                        type: "success"
+                    });
+                },
+                error: function (data) {
+                    console.log(data);
+                    swal({
+                        title: "Algo salió mal",
+                        text: data.responseJSON.error,
+                        type: "error",
+                        showCancelButton: false,
+                        closeOnConfirm: true,
+                        confirmButtonColor: "gray",
+                        cancelButtonColor: "red"
+                    }, function(){
+                        //  location.reload();
+                    });
+                }
+            });
+
+        }
+
         $(document).ready(function() {
 
             $('#userInfo').html(GetUser() ? GetUser().name + ' <i class="fa fa-angle-down"></i>': "" + ' <i class="fa fa-angle-down"></i>');

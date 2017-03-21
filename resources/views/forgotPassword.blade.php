@@ -19,7 +19,7 @@
                         </h3>
                     </div>
                     <div class="panel-body">
-                        <p> Ingresa al menos uno de los siguientes datos</p>
+                        <p> Ingrese al menos uno de los siguientes datos</p>
                         <form class="form-horizontal" role="form" action="{{ url('/login') }}" method="post">
                             <div class="form-group">
                                 <div class="col-md-12">

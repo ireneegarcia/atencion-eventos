@@ -297,11 +297,11 @@ class ApiAuthController extends Controller
     public function changePassword(Request $request)
     {
         if ($request->old_password == null or $request->new_password==null) {
-            return response()->json(["success" => "False", "description" => "ERROR: Debe indicar los campos old_password y new_password"], 400);
+            return response()->json(["success" => "False", "error" => "Debe indicar los campos old_password y new_password"], 400);
         }
 
         if (JWTAuth::attempt(['id' => $request->user->id, 'password' => $request->old_password])==null) {
-            return response()->json(["success" => "False", "description" => "ERROR: La clave anterior es incorrecta"], 401);
+            return response()->json(["success" => "False", "error" => "La clave anterior es incorrecta"], 401);
         }
         $request->user->password=Hash::make($request->new_password);
         $request->user->save();
