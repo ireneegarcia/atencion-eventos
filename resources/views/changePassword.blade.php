@@ -101,12 +101,17 @@
 
             var jsonObjeto =JSON.parse(GetCookie("user"));
 
+            var token =GetCookie("token");
+            var substring = "Bearer ";
+            var Authorization = substring.concat(token);
+            console.log(Authorization);
             $.ajax({
                 type: "POST",
                 url: GetBaseURL()+"api/change_password",
                 data: {
                     old_password: $('#input7').val(),
                     new_password: $('#input8').val(),
+                    Authorization: Authorization,
                     user: jsonObjeto
                 },
                 dataType: "json",
