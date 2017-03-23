@@ -15,9 +15,6 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/', function () {
-    return view('index');
-});
 
 Route::get('/mapvector', function () {
     return view('mapvector');
@@ -36,8 +33,9 @@ Route::get('/changePassword', function () {
     return view('changePassword');
 });
 
+
 //todo list
-Route::get('/', 'OperatorController@todoList');
+Route::get('/', 'OperatorController@index');
 
 //profile
 Route::get('/profile', 'OperatorController@getProfile');

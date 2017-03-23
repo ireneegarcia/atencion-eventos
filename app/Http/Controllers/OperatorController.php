@@ -15,9 +15,11 @@ use App\Models\Todo;
 
 class OperatorController extends Controller
 {
-    //Controladores para los to do list
 
-    public function todoList()
+
+
+    //carga index
+    public function index()
     {
 
         $todos = Todo::where('account',  1)
@@ -25,11 +27,17 @@ class OperatorController extends Controller
             ->orderBy('id', 'asc')
             ->get();
 
+        $countClients = Account::where('role', 2)->count();
+        $countServices = Account::where('role', 3)->count();
+
         return view('/index', [
-            'todos' => $todos
+            'todos' => $todos,
+            'countClients' => $countClients,
+            'countServices' => $countServices
         ]);
     }
 
+    //Controladores para los to do list
     public function storeTodo(Request $request)
     {
         $newTodo = new Todo;
@@ -131,6 +139,7 @@ class OperatorController extends Controller
             'relationship_types' =>$relationship_types
         ]);
     }
+
     //CAMBIO DE CLAVE
     function myProfile($role)
     {

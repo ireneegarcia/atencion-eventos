@@ -10,7 +10,7 @@
         <div class="col-md-3 col-sm-6">
             <div class="dashboard-tile detail tile-red">
                 <div class="content">
-                    <h1 class="text-left timer" data-from="0" data-to="180" data-speed="2500"> </h1>
+                    <h1 class="text-left timer" data-from="0" data-to="{{$countClients}}" data-speed="2500"> </h1>
                     <p>Clientes</p>
                 </div>
                 <div class="icon"><i class="fa fa-users"></i>
@@ -20,7 +20,7 @@
         <div class="col-md-3 col-sm-6">
             <div class="dashboard-tile detail tile-turquoise">
                 <div class="content">
-                    <h1 class="text-left timer" data-from="0" data-to="56" data-speed="2500"> </h1>
+                    <h1 class="text-left timer" data-from="0" data-to="{{$countServices}}" data-speed="2500"> </h1>
                     <p>Servicios</p>
                 </div>
                 <div class="icon"><i class="fa fa-truck"></i>
