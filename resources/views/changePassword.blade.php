@@ -108,13 +108,13 @@
             $.ajax({
                 type: "POST",
                 url: GetBaseURL()+"api/change_password",
+                dataType: "json",
+                headers: {Authorization: Authorization},
                 data: {
                     old_password: $('#input7').val(),
                     new_password: $('#input8').val(),
-                    Authorization: Authorization,
                     user: jsonObjeto
                 },
-                dataType: "json",
                 success: function(data) {
 
                     swal({
