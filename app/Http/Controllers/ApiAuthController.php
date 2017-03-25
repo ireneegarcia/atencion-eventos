@@ -235,11 +235,7 @@ class ApiAuthController extends Controller
         if ($save) {
             $image = $request->file('photo');
             $input['imagename'] = $request->ci . '.' . $image->getClientOriginalExtension();
-            if ($is_ci) {
-                $destinationPath = public_path('/images/ci/');
-            } else {
-                $destinationPath = public_path('/images/profiles/');
-            }
+            $destinationPath = public_path('/images/profiles/');
             $image->move($destinationPath, $input['imagename']);
         }
 

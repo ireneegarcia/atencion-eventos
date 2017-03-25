@@ -183,7 +183,7 @@
                     <form class="form-horizontal form-border" id="form">
 
                         <div class="form-group">
-                            <input type="file" id="exampleInputFile">
+                            <input type="file" id="profileimage">
                         </div>
 
                         <div class="row">
@@ -259,41 +259,34 @@
 
         //GUARDAR FOTO DE PERFIL
         function save_photo() {
-            //photo: $('#exampleInputFile').val()
-            var jsonObjeto =JSON.parse(GetCookie("user"));
-            $.ajax({
-                type: "POST",
-                url: GetBaseURL()+"api/save_photo",
-                data: {
-                    account: jsonObjeto.id,
-                    ci: jsonObjeto.ci,
-                    photo: $('#exampleInputFile').val()
-                },
-                dataType: "json",
-                success: function(data) {
-
-                    swal({
-                        title: "Listo",
-                        text: "Foto guardada exitosamente",
-                        type: "success"
-                    });
-                },
-                error: function (data) {
-                    console.log(data);
-                    swal({
-                        title: "Algo salió mal",
-                        text: data.responseJSON.error,
-                        type: "error",
-                        showCancelButton: false,
-                        closeOnConfirm: true,
-                        confirmButtonColor: "gray",
-                        cancelButtonColor: "red"
-                    }, function(){
-                        //  location.reload();
-                    });
-                }
+            var inputFile = document.querySelector('input[type="file"]');
+            var formData = new FormData();
+            formData.append('photo', inputFile.files[0]);
+            formData.append('ci', GetUser().ci);
+            fetch(GetBaseURL()+"api/save_photo", {
+                method: 'POST',
+                body: formData
+            }).then(function(data) {
+                swal({
+                    title: "Listo",
+                    text: "Foto guardada exitosamente",
+                    type: "success"
+                });
+            }).catch(function(err) {
+                swal({
+                    title: "Algo salió mal",
+                    text: data.responseJSON.error,
+                    type: "error",
+                    showCancelButton: false,
+                    closeOnConfirm: true,
+                    confirmButtonColor: "gray",
+                    cancelButtonColor: "red"
+                }, function(){
+                    //  location.reload();
+                });
             });
         }
+
         //INICIO CONDICIONES
         function my_condition() {
 
