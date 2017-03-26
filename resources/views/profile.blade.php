@@ -266,33 +266,7 @@
                 data: {
                     account: jsonObjeto.ci
                 },
-                dataType: "json",
-                success: function(data) {
-
-                    swal({
-                        title: "Todobien",
-                        text: "",
-                        type: "success",
-                        showCancelButton: false,
-                        closeOnConfirm: true,
-                        confirmButtonColor: "gray",
-                        cancelButtonColor: "red"
-                    });
-                },
-                error: function (data) {
-                    // console.log(data);
-                    swal({
-                        title: "Algo salió mal",
-                        text: "",
-                        type: "error",
-                        showCancelButton: false,
-                        closeOnConfirm: true,
-                        confirmButtonColor: "gray",
-                        cancelButtonColor: "red"
-                    }, function(){
-                        //  location.reload();
-                    });
-                }
+                dataType: "json"
             });
         }
 

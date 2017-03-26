@@ -152,7 +152,6 @@ class OperatorController extends Controller
         }
 
         return response()->json(500);
-
     }
 
     function my_condition(Request $request)
