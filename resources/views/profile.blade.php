@@ -257,22 +257,10 @@
 
     <script>
 
-        //BORRAR FOTO DE PERFIL
-        function delete_photo() {
-            var jsonObjeto =JSON.parse(GetCookie("user"));
-            $.ajax({
-                type: "POST",
-                url: GetBaseURL()+"api/delete_photo",
-                data: {
-                    account: jsonObjeto.ci
-                },
-                dataType: "json"
-            });
-        }
 
         //GUARDAR FOTO DE PERFIL
         function save_photo() {
-          //  delete_photo();
+
             var inputFile = document.querySelector('input[type="file"]');
             var formData = new FormData();
             formData.append('photo', inputFile.files[0]);

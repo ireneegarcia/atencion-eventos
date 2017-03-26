@@ -137,22 +137,6 @@ class OperatorController extends Controller
         ]);
     }
 
-    //verifica si ya tiene una foto guardada el usuario y la borra
-    function deletePhoto(Request $request)
-    {
-        $destinationPath = public_path('/images/profiles/');
-        $ci = $request['ci'];
-
-        $filename = $destinationPath.$ci;
-
-        if (File::exists($filename)) {
-            File::delete($filename);
-            //unlink($filename);
-            return response()->json(200);
-        }
-
-        return response()->json(500);
-    }
 
     function my_condition(Request $request)
     {

@@ -239,7 +239,16 @@ class ApiAuthController extends Controller
             $image->move($destinationPath, $input['imagename']);
 
             $account = Account::byCI($request->ci);
-            $account->photo = 1;
+            if($account->photo == 1)
+            {
+                //verifica si ya tiene una foto guardada el usuario y la borra
+                $filename = $destinationPath.$account->namePhoto;
+                File::delete($filename);
+                //unlink($filename);
+
+            }else{
+                $account->photo = 1;
+            }
             $account->namePhoto = $input['imagename'];
             $account->save();
         }
