@@ -32,6 +32,7 @@ Route::group(['middleware' => 'cors'], function () {
 
     // Accounts
     Route::post('/save_photo', 'ApiAuthController@savePhoto');
+    Route::post('/delete_photo', 'OperatorController@deletePhoto');
 
     // Home del api
     Route::get('/accounts/byCI/{ci}', 'AccountController@byCI');

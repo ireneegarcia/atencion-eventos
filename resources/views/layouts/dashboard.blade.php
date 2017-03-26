@@ -138,7 +138,7 @@
 
                 </li>
                 <li class="profile-photo">
-                    <img src="{{asset('/img/avatar.png')}}" alt="" class="img-circle">
+                    <img id="userPhoto" src="{{asset('/images/anon.png')}}" alt="" class="img-circle">
                 </li>
                 <li class="dropdown settings">
                     <a id="userInfo" class="dropdown-toggle" data-toggle="dropdown" href="#">

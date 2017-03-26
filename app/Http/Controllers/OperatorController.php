@@ -16,12 +16,9 @@ use App\Models\Todo;
 class OperatorController extends Controller
 {
 
-
-
     //carga index
     public function index()
     {
-
         $todos = Todo::where('account',  1)
             ->where('status', 1)
             ->orderBy('id', 'asc')
@@ -140,13 +137,22 @@ class OperatorController extends Controller
         ]);
     }
 
-    //CAMBIO DE CLAVE
-    function myProfile($role)
+    //verifica si ya tiene una foto guardada el usuario y la borra
+    function deletePhoto(Request $request)
     {
+        $destinationPath = public_path('/images/profiles/');
+        $ci = $request['ci'];
 
-        return view('changePassword', [
-            'profile' => $profile
-        ]);;
+        $filename = $destinationPath.$ci;
+
+        if (File::exists($filename)) {
+            File::delete($filename);
+            //unlink($filename);
+            return response()->json(200);
+        }
+
+        return response()->json(500);
+
     }
 
     function my_condition(Request $request)

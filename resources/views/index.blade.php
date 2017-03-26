@@ -108,7 +108,19 @@
             $('#popover-left,#popover-top,#popover-bottom,#popover-right').popover();
             $('#tooltip-left,#tooltip-top,#tooltip-bottom,#tooltip-right').tooltip();
 
-            $('#userInfo').html(GetUser() ? GetUser().name + ' <i class="fa fa-angle-down"></i>': "" + ' <i class="fa fa-angle-down"></i>');
+
+            if( GetUser() != null )
+            {
+                //$('#userInfo').html(GetUser() ? GetUser().name + ' <i class="fa fa-angle-down"></i>': "" + ' <i class="fa fa-angle-down"></i>');
+                $('#userInfo').html(GetUser().name + ' <i class="fa fa-angle-down"></i>');
+
+                var photoRoute = "images/profiles/";
+                var cedula = GetUser().ci+".png";
+                var res = photoRoute.concat(cedula);
+               // console.log(res);
+                $('#userPhoto').attr("src",res);
+            }
+
             app.timer();
             app.map();
             /* app.weather();

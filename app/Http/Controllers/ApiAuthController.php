@@ -237,6 +237,10 @@ class ApiAuthController extends Controller
             $input['imagename'] = $request->ci . '.' . $image->getClientOriginalExtension();
             $destinationPath = public_path('/images/profiles/');
             $image->move($destinationPath, $input['imagename']);
+
+            $account = Account::byCI($request->ci);
+            $account->photo = 1;
+            $account->save();
         }
 
         return response()->json(["success" => "True", "description" => "Imagen subida con exito"], 200);
