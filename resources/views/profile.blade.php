@@ -272,7 +272,7 @@
 
         //GUARDAR FOTO DE PERFIL
         function save_photo() {
-            delete_photo();
+          //  delete_photo();
             var inputFile = document.querySelector('input[type="file"]');
             var formData = new FormData();
             formData.append('photo', inputFile.files[0]);

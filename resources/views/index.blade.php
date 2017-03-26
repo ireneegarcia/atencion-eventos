@@ -114,11 +114,14 @@
                 //$('#userInfo').html(GetUser() ? GetUser().name + ' <i class="fa fa-angle-down"></i>': "" + ' <i class="fa fa-angle-down"></i>');
                 $('#userInfo').html(GetUser().name + ' <i class="fa fa-angle-down"></i>');
 
-                var photoRoute = "images/profiles/";
-                var cedula = GetUser().ci+".png";
-                var res = photoRoute.concat(cedula);
-               // console.log(res);
-                $('#userPhoto').attr("src",res);
+                if(GetUser().photo == 1){
+                    var photoRoute = "images/profiles/";
+                    var namePhoto = GetUser().namePhoto;
+                    var res = photoRoute.concat(namePhoto);
+                    // console.log(res);
+                    $('#userPhoto').attr("src",res);
+                }
+
             }
 
             app.timer();

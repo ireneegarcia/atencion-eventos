@@ -240,6 +240,7 @@ class ApiAuthController extends Controller
 
             $account = Account::byCI($request->ci);
             $account->photo = 1;
+            $account->namePhoto = $input['imagename'];
             $account->save();
         }
 
