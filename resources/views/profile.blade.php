@@ -268,11 +268,19 @@
             fetch(GetBaseURL()+"api/save_photo", {
                 method: 'POST',
                 body: formData
-            }).then(function(data) {
-                swal({
-                    title: "Listo",
-                    text: "Foto guardada exitosamente",
-                    type: "success"
+            }).then(function(response) {
+                return response.text().then(function(data) {
+                    window.location.reload(true);
+                    data = JSON.parse(data);
+                    var userData = GetUser();
+                    userData.namePhoto = data.imageFile;
+                    SaveCookie("user", JSON.stringify(userData));
+                    $('#userPhoto').attr("src","images/profiles/"+userData.namePhoto);
+                    swal({
+                        title: "Listo",
+                        text: "Foto guardada exitosamente",
+                        type: "success"
+                    });
                 });
             }).catch(function(err) {
                 swal({

@@ -250,11 +250,12 @@ class ApiAuthController extends Controller
             }else{
                 $account->photo = 1;
             }
+
             $account->namePhoto = $input['imagename'];
             $account->save();
         }
 
-        return response()->json(["success" => "True", "description" => "Imagen subida con exito"], 200);
+        return response()->json(["success" => "True", "description" => "Imagen subida con exito", "imageFile" => $account->namePhoto], 200);
     }
 
     private function validarRole($role)
