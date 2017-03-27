@@ -70,6 +70,23 @@ function VerifyLogged() {
 
 }
 
+function MyUser() {
+    if( GetUser() != null )
+    {
+        //$('#userInfo').html(GetUser() ? GetUser().name + ' <i class="fa fa-angle-down"></i>': "" + ' <i class="fa fa-angle-down"></i>');
+        $('#userInfo').html(GetUser().name + ' <i class="fa fa-angle-down"></i>');
+
+        if(GetUser().photo == 1){
+            var photoRoute = "images/profiles/";
+            var namePhoto = GetUser().namePhoto;
+            var res = photoRoute.concat(namePhoto);
+            // console.log(res);
+            $('#userPhoto').attr("src",res);
+        }
+
+    }
+    
+}
 $(document).ready(function() {
     VerifyLogged();
 });

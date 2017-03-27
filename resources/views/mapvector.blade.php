@@ -76,9 +76,9 @@
 
         $(document).ready(function() {
 
-            $('#userInfo').html(GetUser() ? GetUser().name + ' <i class="fa fa-angle-down"></i>': "" + ' <i class="fa fa-angle-down"></i>');
+            //$('#userInfo').html(GetUser() ? GetUser().name + ' <i class="fa fa-angle-down"></i>': "" + ' <i class="fa fa-angle-down"></i>');
 
-            //$('#map').vectorMap({map: ''});
+            MyUser();
         });
 
     </script>

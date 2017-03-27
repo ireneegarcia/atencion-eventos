@@ -108,21 +108,7 @@
             $('#popover-left,#popover-top,#popover-bottom,#popover-right').popover();
             $('#tooltip-left,#tooltip-top,#tooltip-bottom,#tooltip-right').tooltip();
 
-
-            if( GetUser() != null )
-            {
-                //$('#userInfo').html(GetUser() ? GetUser().name + ' <i class="fa fa-angle-down"></i>': "" + ' <i class="fa fa-angle-down"></i>');
-                $('#userInfo').html(GetUser().name + ' <i class="fa fa-angle-down"></i>');
-
-                if(GetUser().photo == 1){
-                    var photoRoute = "images/profiles/";
-                    var namePhoto = GetUser().namePhoto;
-                    var res = photoRoute.concat(namePhoto);
-                    // console.log(res);
-                    $('#userPhoto').attr("src",res);
-                }
-
-            }
+            MyUser();
 
             app.timer();
             app.map();

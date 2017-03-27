@@ -553,7 +553,11 @@
     <script>
         $(document).ready(function() {
 
-            $('#userInfo').html(GetUser() ? GetUser().name + ' <i class="fa fa-angle-down"></i>': "" + ' <i class="fa fa-angle-down"></i>');
+           /* $('#userInfo').html(GetUser() ? GetUser().name + ' <i class="fa fa-angle-down"></i>': "" + ' <i class="fa fa-angle-down"></i>');
+            */
+
+            MyUser();
+
             $('.username').val(GetUser() ? GetUser().name : "" );
             $('.useremail').val(GetUser() ? GetUser().email : "" );
 
